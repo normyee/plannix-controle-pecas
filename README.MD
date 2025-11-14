@@ -36,10 +36,10 @@ Relacionamento:
                      \--- usa regiao ----/
 ```
 <p align="center">
-  <img src="https://i.imgur.com/coERu0t.png" width="1080"/>
+  <img src="https://i.imgur.com/coERu0t.png" width="1040"/>
 </p>
 
-
+> Ilustração gerada por https://dbdiagram.io
 
 # Setup do Banco de Dados
 Você pode criar as tabelas de duas formas: pelo gerenciador de banco ou pelo Docker. Qualquer uma das opções funciona.
