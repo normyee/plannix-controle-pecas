@@ -1,0 +1,7 @@
+CREATE TABLE obras (
+id int IDENTITY(1,1) PRIMARY KEY,
+nome_obra NVARCHAR(350) NOT NULL,
+sigla_obra VARCHAR(255) NULL,
+data_entrega DATE NOT NULL,
+status VARCHAR(20) DEFAULT 'ATIVO'
+);

@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="Resources\plannix_logo.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Scripts\script_create_tables.sql" />
+    <Content Include="Scripts\script_insert.sql" />
+    <Content Include="Scripts\script_select.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
