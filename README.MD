@@ -14,8 +14,7 @@ usei primary key composta para estoque para evitar duplicidade. poderia ter o me
 1.1. Crie o banco de dados conforme o Diagrama de Dados fornecido. ✅
 1.1.1. Considere que o Diagrama de Dados está incompleto e faça as correções e ajustes que julgar pertinentes. ✅
 1.2. Desenvolva um script de INSERT para cada uma das tabelas especificadas no Diagrama de Dados. ✅
-
-1.3. Elabore um script de SELECT que apresente, em uma única linha, as seguintes informações: Código de Controle; Nome da Peça; Nome da Obra; Status do Acabamento; Região de Estoque
+1.3. Elabore um script de SELECT que apresente, em uma única linha, as seguintes informações: Código de Controle; Nome da Peça; Nome da Obra; Status do Acabamento; Região de Estoque ✅
 
 2 - Desenvolvimento de Sistema (C#)
 2.1. Crie um sistema em C# Windows Forms com os seguintes requisitos:
@@ -38,19 +37,38 @@ Você pode criar as tabelas de duas formas: pelo gerenciador de banco ou pelo Do
 
 ---
 
-## Opção 1: Com gerenciador de banco
-Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Studio**, **DataGrip** ou **SQL Server Management Studio** com banco de dados já existente ou novo e execute ou copie o script, cole e execute.
+# Desafio 1
+Você terá duas opções para seguir. Uma é executar pelo gerenciador de banco de dados, e a outra com o Docker. Subir o container do docker é opcional caso já tenha o banco de dados
 
+## Opção 1: Com gerenciador de banco
+Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Studio**, **DataGrip** ou **SQL Server Management Studio** com banco de dados já existente ou novo e execute ou copie o script, cole e execute. **Faça** o mesmo para `script_insert.sql` e `script_select.sql` de todas as etapas do **desafio 1**
+> 1.1, 1.1.1, 1.2 e 1.3 ✅
 ---
 ## Opção 2: Com Docker
 
-1. Entre no diretório `Scripts` do projeto.
+1. **Entre** no diretório `Scripts` do projeto.
 2. Execute o script no container Docker:
 
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_create_tables.sql"
 ```
+> 1.1 e 1.1.1 ✅
 3. Verifique se as tabelas foram criadas
 ```bash
 docker run -it --rm --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -Q 'SELECT name FROM sys.tables;'"
 ```
+4. Popular o banco de dados com items
+```bash
+docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_insert.sql"
+
+```
+> 1.2 ✅
+5. Selecionar linha com `código de controle`, `nome da peça`, `nome da obra`,`status do acabamento`, `região de estoque`
+```bash
+docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -W -s '|' -i /scripts/script_select.sql"
+
+```
+> 1.3 ✅
+
+---
+# Desafio 2
