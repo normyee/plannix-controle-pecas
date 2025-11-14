@@ -1,4 +1,6 @@
-![Plannix](https://plannix.com.br/wp-content/webp-express/webp-images/uploads/2021/07/cropped-logo-plannix.png.webp)
+<p align="center">
+  <img src="https://plannix.com.br/wp-content/webp-express/webp-images/uploads/2021/07/cropped-logo-plannix.png.webp" width="120"/>
+</p>
 
 data_entrega ficou nula -> obra futura às vezes não tem data clara
 
