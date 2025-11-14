@@ -1,3 +1,5 @@
+![Plannix](https://plannix.com.br/wp-content/webp-express/webp-images/uploads/2021/07/cropped-logo-plannix.png.webp)
+
 data_entrega ficou nula -> obra futura às vezes não tem data clara
 
 renomeei os nomes das tabelas para ficarem mais claros
