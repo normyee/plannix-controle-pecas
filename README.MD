@@ -10,6 +10,21 @@ além disso acrescentei uma tabela nova chamada "regioes" para substituir o "Reg
 
 usei primary key composta para estoque para evitar duplicidade. poderia ter o mesmo id_peca e id_acabamento em um registro de estoque, mas fazendo ser a primary key isso é evitado
 
+1 - Criação do Banco de Dados (SQL Server) ✅
+1.1. Crie o banco de dados conforme o Diagrama de Dados fornecido. ✅
+1.1.1. Considere que o Diagrama de Dados está incompleto e faça as correções e ajustes que julgar pertinentes. ✅
+1.2. Desenvolva um script de INSERT para cada uma das tabelas especificadas no Diagrama de Dados. ✅
+
+1.3. Elabore um script de SELECT que apresente, em uma única linha, as seguintes informações: Código de Controle; Nome da Peça; Nome da Obra; Status do Acabamento; Região de Estoque
+
+2 - Desenvolvimento de Sistema (C#)
+2.1. Crie um sistema em C# Windows Forms com os seguintes requisitos:
+2.1.1. O sistema deve conter pelo menos dois
+formulários relacionados ao banco de dados criado na etapa anterior.
+2.1.2. Implemente um CRUD com utilização de um DataGridView para listar os itens cadastrados.
+2.1.3. Adicione filtros por Obra e Região de Estoque no sistema.
+2.2. O sistema deve permitir a extração de um relatório em PDF com os cadastros realizados.
+2.2.1. Inclua os filtros mencionados anteriormente (Obra e Região de Estoque) no relatório gerado.
 
 Relacionamento:
 ```text
