@@ -25,6 +25,7 @@ namespace ControlePecas
 
         private void Main_load(object sender, EventArgs e)
         {
+
             var carregarObras = new CarregarObras(new BuscarObrasRepository());
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
 
@@ -151,6 +152,12 @@ namespace ControlePecas
             }
         }
 
+        private void Main_Resize(object sender, EventArgs e)
+        {
+            panel1.Left = (ClientSize.Width - panel1.Width) / 2;
+            panel1.Top = (ClientSize.Height - panel1.Height) / 2;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (_selectedPeca == 0 || _selectedRowIndex == null) return;
@@ -183,7 +190,7 @@ namespace ControlePecas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void InserirItem_Click(object sender, EventArgs e)
         {
 
         }
