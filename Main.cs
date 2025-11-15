@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ControlePecas.Services;
+using System;
 using System.Windows.Forms;
 
 namespace ControlePecas
@@ -19,6 +13,19 @@ namespace ControlePecas
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var carregarObras = new CarregarObras(new Repository.BuscarObrasRepository());
+            var carregarRegioesEstoques = new CarregarRegioesEstoques(new Repository.BuscarRegioesEstoquesRepository());
+
+            var regioesEstoques = carregarRegioesEstoques.Executar();
+            var obras = carregarObras.Executar();
+
+            comboBox1.DataSource = obras;
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.ValueMember = "CodObra";
+
+            comboBox2.DataSource = regioesEstoques;
+            comboBox2.DisplayMember = "Nome";
+            comboBox2.ValueMember = "CodObra";
 
         }
 
@@ -48,6 +55,11 @@ namespace ControlePecas
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

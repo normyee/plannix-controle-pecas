@@ -98,6 +98,7 @@ namespace ControlePecas
             this.comboBox2.Size = new System.Drawing.Size(653, 30);
             this.comboBox2.TabIndex = 4;
             this.comboBox2.Text = "Região de Estoque:";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button2
             // 
