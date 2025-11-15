@@ -87,7 +87,7 @@ namespace ControlePecas
             this.comboBox1.Size = new System.Drawing.Size(653, 30);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "Obra:";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ObraComboBox_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -98,7 +98,7 @@ namespace ControlePecas
             this.comboBox2.Size = new System.Drawing.Size(653, 30);
             this.comboBox2.TabIndex = 4;
             this.comboBox2.Text = "Região de Estoque:";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.RegiaoEstoqueComboBox_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -126,11 +126,14 @@ namespace ControlePecas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(106, 444);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 153);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Main
             // 
@@ -150,7 +153,7 @@ namespace ControlePecas
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Main";
             this.Text = "Controle Peças";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Main_load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
