@@ -17,9 +17,7 @@ namespace ControlePecas.Repository
                 connection.Open();
 
                 string query = @"SELECT 
-                                id_regiao, 
-                                nome_regiao, 
-                                tipo_regiao, 
+                                id_regiao, nome
                               FROM regioes";
 
                 using (var cmd = new SqlCommand(query, connection))
@@ -31,7 +29,6 @@ namespace ControlePecas.Repository
                         {
                             Id = reader.GetInt32(0),
                             Nome = reader.GetString(1),
-                            Tipo = reader.GetString(2)
                         });
 
                     }
