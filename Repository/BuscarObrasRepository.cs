@@ -1,0 +1,49 @@
+﻿using ControlePecas.Entity;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace ControlePecas.Repository
+{
+    public class BuscarObrasRepository
+    {
+
+        private readonly string _connectionString = "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
+
+        public List<Obra> Executar()
+        {
+            var obras = new List<Obra>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                string query = @"SELECT 
+                                id_obra, 
+                                nome_obra, 
+                                sigla_obra, 
+                                data_entrega, 
+                                status 
+                              FROM obras";
+
+                using (var cmd = new SqlCommand(query, connection))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        obras.Add(new Obra
+                        {
+                            CodObra = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            Sigla = reader.GetString(2),
+                            DataEntrega = reader.GetDateTime(3),
+                            Status = reader.GetString(4),
+                        });
+                    }
+                }
+
+
+                return obras;
+            }
+        }
+    }
+}
