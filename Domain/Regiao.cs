@@ -1,4 +1,4 @@
-﻿namespace ControlePecas.Entity
+﻿namespace ControlePecas.Domain
 {
     public class Regiao
     {

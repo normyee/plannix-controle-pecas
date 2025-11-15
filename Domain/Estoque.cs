@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ControlePecas.Entity
+namespace ControlePecas.Domain
 {
     public class Estoque
     {
