@@ -5,6 +5,7 @@ using ControlePecas.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControlePecas
@@ -14,6 +15,7 @@ namespace ControlePecas
         private List<Regiao> _regioesEstoques;
         private List<Obra> _obras;
         private bool _carregouForm = false;
+        private int? _selectedPeca = null;
         public Main()
         {
             InitializeComponent();
@@ -132,6 +134,19 @@ namespace ControlePecas
             }
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dataGridView1.Rows[e.RowIndex];
+            var codControle = row.Cells["Cod."].Value;
+
+            if (codControle != null)
+            {
+                _selectedPeca = int.Parse(codControle.ToString());
+            }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -158,6 +173,12 @@ namespace ControlePecas
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var teste = e;
+            var teste2 = teste;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
