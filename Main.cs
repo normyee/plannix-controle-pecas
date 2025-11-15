@@ -15,7 +15,9 @@ namespace ControlePecas
         private List<Regiao> _regioesEstoques;
         private List<Obra> _obras;
         private bool _carregouForm = false;
-        private int? _selectedPeca = null;
+
+        private int _selectedPeca = 0;
+        private int? _selectedRowIndex = null;
         public Main()
         {
             InitializeComponent();
@@ -138,13 +140,27 @@ namespace ControlePecas
         {
             if (e.RowIndex < 0) return;
 
+            _selectedRowIndex = e.RowIndex;
             var row = dataGridView1.Rows[e.RowIndex];
+       
             var codControle = row.Cells["Cod."].Value;
 
             if (codControle != null)
             {
                 _selectedPeca = int.Parse(codControle.ToString());
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (_selectedPeca == 0 || _selectedRowIndex == null) return;
+           var deletarService = new DeletarPecaService(new DeletarPecaRepository());
+
+            deletarService.Executar(_selectedPeca);
+            dataGridView1.Rows.RemoveAt(_selectedRowIndex.Value);
+
+            _selectedPeca = 0;
+            _selectedRowIndex = null;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

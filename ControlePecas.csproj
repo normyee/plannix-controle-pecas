@@ -63,9 +63,11 @@
     <Compile Include="Repository\BuscarObrasRepository.cs" />
     <Compile Include="Repository\BuscarPecasRepository.cs" />
     <Compile Include="Repository\BuscarRegioesEstoques.cs" />
+    <Compile Include="Repository\DeletarPecaRepository.cs" />
     <Compile Include="Services\CarregarObras.cs" />
     <Compile Include="Services\CarregarPecas.cs" />
     <Compile Include="Services\CarregarRegioesEstoques.cs" />
+    <Compile Include="Services\DeletarPecaService.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
