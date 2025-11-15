@@ -1,4 +1,4 @@
-﻿using ControlePecas.Entity;
+﻿using ControlePecas.Domain;
 using ControlePecas.Repository;
 using System.Collections.Generic;
 

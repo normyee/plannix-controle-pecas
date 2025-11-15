@@ -1,5 +1,5 @@
-﻿using ControlePecas.Entity;
-using ControlePecas.Repository;
+﻿using ControlePecas.Domain;
+using ControlePecas.Repository.BuscarObrasRepository;
 using System.Collections.Generic;
 
 namespace ControlePecas.Services
