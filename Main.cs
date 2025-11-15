@@ -1,6 +1,7 @@
 ﻿using ControlePecas.Services;
 using System;
 using System.Windows.Forms;
+using ControlePecas.Repository.BuscarObrasRepository;
 
 namespace ControlePecas
 {
@@ -13,7 +14,7 @@ namespace ControlePecas
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var carregarObras = new CarregarObras(new Repository.BuscarObrasRepository());
+            var carregarObras = new CarregarObras(new BuscarObrasRepository());
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new Repository.BuscarRegioesEstoquesRepository());
 
             var regioesEstoques = carregarRegioesEstoques.Executar();
@@ -25,7 +26,7 @@ namespace ControlePecas
 
             comboBox2.DataSource = regioesEstoques;
             comboBox2.DisplayMember = "Nome";
-            comboBox2.ValueMember = "CodObra";
+            comboBox2.ValueMember = "Id";
 
         }
 
