@@ -14,6 +14,18 @@ além disso acrescentei uma tabela nova chamada "regioes" para substituir o "Reg
 
 usei primary key composta para estoque para evitar duplicidade. poderia ter o mesmo id_peca e id_acabamento em um registro de estoque, mas fazendo ser a primary key isso é evitado
 
+peca tera os status: ATIVA, INATIVA
+estoque terá dois estados: AGUARDANDO_ACABAMENTO, EM_ACABAMENTO e DISPONIVEL
+acabamento terá três estados: PENDENTE, EM_PRODUCAO e FINALIZADO
+adicionei data_fim (quando finaliza) e data_inicio para acabamento
+
+obra terá: ATIVA, CONCLUIDA e INATIVA
+
+MAPEAMENTO:
+acabamento = pendente → estoque = aguardando_acabamento
+acabamento = em_producao → estoque = em_acabamento
+acabamento = finalizado → estoque = disponivel
+
 1 - Criação do Banco de Dados (SQL Server) ✅
 1.1. Crie o banco de dados conforme o Diagrama de Dados fornecido. ✅
 1.1.1. Considere que o Diagrama de Dados está incompleto e faça as correções e ajustes que julgar pertinentes. ✅
@@ -30,11 +42,13 @@ formulários relacionados ao banco de dados criado na etapa anterior.
 2.2.1. Inclua os filtros mencionados anteriormente (Obra e Região de Estoque) no relatório gerado.
 
 Relacionamento:
+
 ```text
 [obra] 1 ── n [peca] 1 ── n [acabamento] 1 ── 1 [estoque]
                     \                     /
                      \--- usa regiao ----/
 ```
+
 <p align="center">
   <img src="https://i.imgur.com/coERu0t.png" width="1040"/>
 </p>
@@ -42,17 +56,23 @@ Relacionamento:
 > Ilustração gerada por https://dbdiagram.io
 
 # Setup do Banco de Dados
+
 Você pode criar as tabelas de duas formas: pelo gerenciador de banco ou pelo Docker. Qualquer uma das opções funciona.
 
 ---
 
 # Desafio 1
+
 Você terá duas opções para seguir. Uma é executar pelo gerenciador de banco de dados, e a outra com o Docker. Subir o container do docker é opcional caso já tenha o banco de dados
 
 ## Opção 1: Com gerenciador de banco
+
 Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Studio**, **DataGrip** ou **SQL Server Management Studio** com banco de dados já existente ou novo e execute ou copie o script, cole e execute. **Faça** o mesmo para `script_insert.sql` e `script_select.sql` de todas as etapas do **desafio 1**
+
 > 1.1, 1.1.1, 1.2 e 1.3 ✅
+
 ---
+
 ## Opção 2: Com Docker
 
 1. **Entre** no diretório `Scripts` do projeto.
@@ -61,23 +81,29 @@ Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Stud
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_create_tables.sql"
 ```
-> 1.1 e 1.1.1 ✅
-3. Verifique se as tabelas foram criadas
+
+> 1.1 e 1.1.1 ✅ 3. Verifique se as tabelas foram criadas
+
 ```bash
 docker run -it --rm --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -Q 'SELECT name FROM sys.tables;'"
 ```
+
 4. Popular o banco de dados com items
+
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_insert.sql"
 
 ```
-> 1.2 ✅
-5. Selecionar linha com `código de controle`, `nome da peça`, `nome da obra`,`status do acabamento`, `região de estoque`
+
+> 1.2 ✅ 5. Selecionar linha com `código de controle`, `nome da peça`, `nome da obra`,`status do acabamento`, `região de estoque`
+
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -W -s '|' -i /scripts/script_select.sql"
 
 ```
+
 > 1.3 ✅
 
 ---
+
 # Desafio 2
