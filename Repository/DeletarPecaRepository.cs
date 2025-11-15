@@ -2,7 +2,7 @@
 
 namespace ControlePecas.Repository
 {
-    public class DeletarPeca
+    public class DeletarPecaRepository
     {
         private readonly string _connectionString =
             "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
