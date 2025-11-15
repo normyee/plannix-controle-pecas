@@ -22,20 +22,20 @@ nome NVARCHAR(255) NOT NULL
 );
 
 CREATE TABLE acabamentos (
-id_acabamento INT IDENTITY(1,1) PRIMARY KEY,
-id_peca INT NOT NULL FOREIGN KEY REFERENCES pecas(id_peca),
-data_inicio DATE NOT NULL,
-data_fim DATE NOT NULL,
-status VARCHAR(30) NOT NULL,
-id_regiao INT NOT NULL FOREIGN KEY REFERENCES regioes(id_regiao)
+    id_acabamento INT IDENTITY(1,1) PRIMARY KEY,
+    id_peca INT NOT NULL FOREIGN KEY REFERENCES pecas(id_peca) ON DELETE CASCADE,
+    data_inicio DATE NOT NULL,
+    data_fim DATE NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    id_regiao INT NOT NULL FOREIGN KEY REFERENCES regioes(id_regiao)
 );
 
 CREATE TABLE estoques (
-id_acabamento INT NOT NULL FOREIGN KEY REFERENCES acabamentos(id_acabamento),
-id_peca INT NOT NULL FOREIGN KEY REFERENCES pecas(id_peca),
-id_regiao INT NOT NULL FOREIGN KEY REFERENCES regioes(id_regiao),
-total INT NOT NULL,
-data DATE NOT NULL,
-status VARCHAR(30) NOT NULL,
-PRIMARY KEY (id_peca, id_acabamento)
+    id_acabamento INT NOT NULL FOREIGN KEY REFERENCES acabamentos(id_acabamento) ON DELETE CASCADE,
+    id_peca INT NOT NULL FOREIGN KEY REFERENCES pecas(id_peca), -- sem cascade aqui
+    id_regiao INT NOT NULL FOREIGN KEY REFERENCES regioes(id_regiao),
+    total INT NOT NULL,
+    data DATE NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id_peca, id_acabamento)
 );
