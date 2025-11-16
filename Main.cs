@@ -17,6 +17,8 @@ namespace ControlePecas
 
         private int _selectedPeca = 0;
         private int? _selectedRowIndex = null;
+
+        private CriarPecaRepository _criarPecaRepository;
         public Main()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace ControlePecas
 
             var carregarObras = new CarregarObras(new BuscarObrasRepository());
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
+            _criarPecaRepository = new CriarPecaRepository();
 
             _regioesEstoques = carregarRegioesEstoques.Executar();
             _obras = carregarObras.Executar();
@@ -169,6 +172,12 @@ namespace ControlePecas
             _selectedRowIndex = null;
         }
 
+        private void InserirItem_Click(object sender, EventArgs e)
+        {
+            var controleCriacao = new ControleCriacao(_regioesEstoques, _obras, _criarPecaRepository);
+            controleCriacao.ShowDialog();
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -187,12 +196,6 @@ namespace ControlePecas
         private void label3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void InserirItem_Click(object sender, EventArgs e)
-        {
-            var controleCriacao = new ControleCriacao(_regioesEstoques);
-            controleCriacao.ShowDialog();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
