@@ -16,6 +16,7 @@ namespace ControlePecas.Repository
 
                 string query = @"
     select 
+        p.id_peca,
         p.nome_peca,
         p.data as data_peca,
         p.status as status_peca,
@@ -49,6 +50,7 @@ namespace ControlePecas.Repository
 
                         var peca = new PecaObra
                         {
+                            CodControle = reader["id_peca"] == DBNull.Value ? 0 : Convert.ToInt32(reader["id_peca"]),
                             NomePeca = reader["nome_peca"].ToString(),
                             DataPeca = (DateTime)reader["data_peca"],
                             PecaStatus = reader["status_peca"].ToString(),

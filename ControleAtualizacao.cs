@@ -14,6 +14,7 @@ namespace ControlePecas
         private List<Regiao> _regioesEstoques;
         private List<Obra> _obras;
         private ObterPecaRepository _obterPecaRepository;
+        private AtualizarPecaRepository _atualizarPecaRepository;
 
         private List<KeyValuePair<string, string>> _acabamentoStatus =
     new List<KeyValuePair<string, string>>
@@ -37,7 +38,7 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPecaRepository obterPecaRepository)
+        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPecaRepository obterPecaRepository, AtualizarPecaRepository atualizarPecaRepository)
         {
             InitializeComponent();
 
@@ -45,6 +46,7 @@ new List<KeyValuePair<string, string>>
             _regioesEstoques = regioesEstoques;
             _obras = obras;
             _obterPecaRepository = obterPecaRepository;
+            _atualizarPecaRepository = atualizarPecaRepository;
 
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -147,8 +149,7 @@ new List<KeyValuePair<string, string>>
                 EstoqueStatus = comboBox5.SelectedValue.ToString(),
                 CodObra = codObra
             };
-
-            //_criarPecaRepository.Executar(pecaObra);
+            _atualizarPecaRepository.Executar(_codControle, pecaObra);
             Close();
         }
 

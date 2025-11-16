@@ -6,6 +6,7 @@ namespace ControlePecas.Repository
 {
     public class PecaObra
     {
+        public int? CodControle { get; set; }
         public string NomePeca { get; set; }
         public DateTime DataPeca { get; set; }   
         public string PecaStatus { get; set; }

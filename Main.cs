@@ -21,6 +21,7 @@ namespace ControlePecas
 
         private CriarPecaRepository _criarPecaRepository;
         private ObterPecaRepository _obterPecaRepository;
+        private AtualizarPecaRepository _atualizarPecaRepository;
         public Main()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace ControlePecas
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
             _obterPecaRepository = new ObterPecaRepository();
             _criarPecaRepository = new CriarPecaRepository();
+            _atualizarPecaRepository = new AtualizarPecaRepository();
 
             _regioesEstoques = carregarRegioesEstoques.Executar();
             _obras = carregarObras.Executar();
@@ -212,7 +214,7 @@ namespace ControlePecas
             if (_selectedPeca != 0)
             {
                 label3.Visible = false;
-                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPecaRepository);
+                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPecaRepository, _atualizarPecaRepository);
                 controleAtualizacao.ShowDialog();
             } 
             if(_selectedPeca == 0)
