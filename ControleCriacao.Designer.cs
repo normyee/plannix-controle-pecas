@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleCriacao));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -57,28 +63,13 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.PecaNome = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ControlePecas.Properties.Resources.plannix_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(389, 139);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -90,6 +81,7 @@
             this.label2.Size = new System.Drawing.Size(233, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Controle de Peças";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -102,6 +94,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "INSERIR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -156,6 +149,83 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 627);
             this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(11, 352);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 13);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Setor de Acabamento:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(144, 348);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(259, 21);
+            this.comboBox6.TabIndex = 42;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Consolas", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(11, 487);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(301, 13);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Ocorreu um erro na validação ou inserção de dado!";
+            this.label15.Visible = false;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(263, 246);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Status:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(318, 242);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(85, 21);
+            this.comboBox5.TabIndex = 39;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(54, 453);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(349, 21);
+            this.comboBox4.TabIndex = 38;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(11, 457);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Obra:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // numericUpDown3
             // 
@@ -175,6 +245,7 @@
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 34;
             this.label9.Text = "Status:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // comboBox3
             // 
@@ -195,6 +266,7 @@
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 32;
             this.label10.Text = "Data:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dateTimePicker4
             // 
@@ -204,6 +276,7 @@
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(68, 20);
             this.dateTimePicker4.TabIndex = 31;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // label11
             // 
@@ -226,6 +299,7 @@
             this.label12.Size = new System.Drawing.Size(72, 19);
             this.label12.TabIndex = 28;
             this.label12.Text = "Estoque";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label8
             // 
@@ -236,6 +310,7 @@
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "Status:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // comboBox2
             // 
@@ -256,6 +331,7 @@
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Fim:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // dateTimePicker3
             // 
@@ -265,6 +341,7 @@
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(68, 20);
             this.dateTimePicker3.TabIndex = 24;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // label6
             // 
@@ -275,6 +352,7 @@
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "Início:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateTimePicker2
             // 
@@ -307,6 +385,7 @@
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Região de Estoque:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
@@ -316,6 +395,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(131, 21);
             this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -326,11 +406,18 @@
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Volume M3:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.DecimalPlaces = 3;
             this.numericUpDown1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(271, 216);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(132, 20);
             this.numericUpDown1.TabIndex = 17;
@@ -349,8 +436,14 @@
             // 
             // numericUpDown2
             // 
+            this.numericUpDown2.DecimalPlaces = 3;
             this.numericUpDown2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown2.Location = new System.Drawing.Point(66, 216);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(131, 20);
             this.numericUpDown2.TabIndex = 15;
@@ -375,6 +468,7 @@
             this.PecaNome.Size = new System.Drawing.Size(294, 20);
             this.PecaNome.TabIndex = 11;
             this.PecaNome.Text = "Nome da peça...";
+            this.PecaNome.TextChanged += new System.EventHandler(this.PecaNome_TextChanged);
             this.PecaNome.Enter += new System.EventHandler(this.PecaNome_Enter);
             this.PecaNome.Leave += new System.EventHandler(this.PecaNome_Leave);
             // 
@@ -391,77 +485,15 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label13
+            // pictureBox1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 457);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Obra:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(54, 453);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(349, 21);
-            this.comboBox4.TabIndex = 38;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(263, 246);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 13);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "Status:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(318, 242);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(85, 21);
-            this.comboBox5.TabIndex = 39;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Consolas", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(11, 487);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(301, 13);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Ocorreu um erro na validação ou inserção de dado!";
-            this.label15.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(11, 352);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 13);
-            this.label16.TabIndex = 43;
-            this.label16.Text = "Setor de Acabamento:";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(144, 348);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(259, 21);
-            this.comboBox6.TabIndex = 42;
+            this.pictureBox1.Image = global::ControlePecas.Properties.Resources.plannix_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(389, 139);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ControleCriacao
             // 
@@ -473,12 +505,12 @@
             this.Name = "ControleCriacao";
             this.Text = "ControleCriacao";
             this.Load += new System.EventHandler(this.ControleCriacao_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
