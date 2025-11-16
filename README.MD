@@ -26,6 +26,8 @@ acabamento = pendente → estoque = aguardando_acabamento
 acabamento = em_producao → estoque = em_acabamento
 acabamento = finalizado → estoque = disponivel
 
+pensei em fazer a tela de inserir nova peça ou atualizar peça trocando panels, mas achei mais interessante trabalhar com modal
+
 1 - Criação do Banco de Dados (SQL Server) ✅
 1.1. Crie o banco de dados conforme o Diagrama de Dados fornecido. ✅
 1.1.1. Considere que o Diagrama de Dados está incompleto e faça as correções e ajustes que julgar pertinentes. ✅
