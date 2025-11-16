@@ -15,9 +15,12 @@ namespace ControlePecas
         private List<Regiao> _regioesEstoques;
         private List<Obra> _obras;
         private bool _carregouForm = false;
+        private bool _emReload = false;
 
         private int _selectedPeca = 0;
         private int? _selectedRowIndex = null;
+        private int _selectedCodObra = 0;
+        private int _selectedRegiaoEstoque = 0;
 
         private CriarPecaRepository _criarPecaRepository;
         private ObterPecaRepository _obterPecaRepository;
@@ -76,10 +79,13 @@ namespace ControlePecas
         }
        private void ObraComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!_carregouForm) return;
+            if (_emReload || !_carregouForm) return;
 
             var obraSelecionada = comboBox1.SelectedItem as Obra;
             var regiaoSelecionada = comboBox2.SelectedItem as Regiao;
+
+            _selectedCodObra = obraSelecionada.CodObra;
+            _selectedRegiaoEstoque = regiaoSelecionada.Id;
 
             if (obraSelecionada != null && regiaoSelecionada != null)
             {
@@ -111,10 +117,13 @@ namespace ControlePecas
 
         private void RegiaoEstoqueComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!_carregouForm) return;
+            if (_emReload || !_carregouForm) return;
 
             var obraSelecionada = comboBox1.SelectedItem as Obra;
             var regiaoSelecionada = comboBox2.SelectedItem as Regiao;
+
+            _selectedCodObra = obraSelecionada.CodObra;
+            _selectedRegiaoEstoque = regiaoSelecionada.Id;
 
             if (obraSelecionada != null && regiaoSelecionada != null)
             {
@@ -231,6 +240,7 @@ namespace ControlePecas
 
         private void button5_Click(object sender, EventArgs e)
         {
+            _emReload = true;
             var carregarObras = new CarregarObras(new BuscarObrasRepository());
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
             _criarPecaRepository = new CriarPecaRepository();
@@ -248,7 +258,7 @@ namespace ControlePecas
 
             var carregarPecas = new CarregarPecas(new BuscarPecasRepository());
 
-            var pecas = carregarPecas.Executar(_obras[0].CodObra, _regioesEstoques[0].Id);
+            var pecas = carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
 
             var tabela = new DataTable();
             tabela.Columns.Add("Cod.");
@@ -270,6 +280,8 @@ namespace ControlePecas
 
             dataGridView1.DataSource = tabela;
             dataGridView1.Columns["Cod."].Width = 50;
+
+            _emReload = false;
         }
     }
 }
