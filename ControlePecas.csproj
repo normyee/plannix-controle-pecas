@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\recarregarIcone.png" />
     <Content Include="Scripts\script_create_tables.sql" />
     <Content Include="Scripts\script_insert.sql" />
     <Content Include="Scripts\script_select.sql" />
