@@ -5,7 +5,6 @@ using ControlePecas.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControlePecas
@@ -192,7 +191,8 @@ namespace ControlePecas
 
         private void InserirItem_Click(object sender, EventArgs e)
         {
-
+            var controleCriacao = new ControleCriacao(_regioesEstoques);
+            controleCriacao.ShowDialog();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
