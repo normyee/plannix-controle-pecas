@@ -69,6 +69,7 @@
     <Compile Include="Repository\BuscarObrasRepository.cs" />
     <Compile Include="Repository\BuscarPecasRepository.cs" />
     <Compile Include="Repository\BuscarRegioesEstoques.cs" />
+    <Compile Include="Repository\CriarPeca.cs" />
     <Compile Include="Repository\DeletarPecaRepository.cs" />
     <Compile Include="Services\CarregarObras.cs" />
     <Compile Include="Services\CarregarPecas.cs" />
