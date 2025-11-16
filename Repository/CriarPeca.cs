@@ -7,19 +7,19 @@ namespace ControlePecas.Repository
     public class PecaObra
     {
         public string NomePeca { get; set; }
-        public DateTime? DataPeca { get; set; }   
+        public DateTime DataPeca { get; set; }   
         public string PecaStatus { get; set; }
         public decimal PesoKg { get; set; }       
         public decimal VolumeM3 { get; set; }         
         public int RegiaoEstoque { get; set; }         
  
         public string AcabamentoStatus { get; set; }     
-        public DateTime? AcabamentoDataInicio { get; set; }  
-        public DateTime? AcabamentoDataFim { get; set; }   
+        public DateTime AcabamentoDataInicio { get; set; }  
+        public DateTime AcabamentoDataFim { get; set; }   
         public int SetorAcabamento { get; set; }
 
         public int EstoqueTotal { get; set; }            
-        public DateTime? DataEstoque { get; set; }       
+        public DateTime DataEstoque { get; set; }       
         public string EstoqueStatus { get; set; }      
 
         public int CodObra { get; set; }             
@@ -122,7 +122,7 @@ namespace ControlePecas.Repository
             {
                 cmd.Parameters.Add("@idPeca", SqlDbType.Int).Value = idPeca;
                 cmd.Parameters.Add("@idAcabamento", SqlDbType.Int).Value = idAcabamento;
-                cmd.Parameters.Add("@dataEstoque", SqlDbType.Date).Value = peca.DataEstoque.Value;
+                cmd.Parameters.Add("@dataEstoque", SqlDbType.Date).Value = peca.DataEstoque;
                 cmd.Parameters.Add("@regiaoEstoque", SqlDbType.Int).Value = peca.RegiaoEstoque;
                 cmd.Parameters.Add("@total", SqlDbType.Int).Value = peca.EstoqueTotal;
                 cmd.Parameters.Add("@status", SqlDbType.VarChar, 30).Value = peca.EstoqueStatus;
