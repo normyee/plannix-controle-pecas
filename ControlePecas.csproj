@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControleAtualizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControleAtualizacao.Designer.cs">
+      <DependentUpon>ControleAtualizacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleCriacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,15 +72,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AtualizarPecaRepository.cs" />
     <Compile Include="Repository\BuscarObrasRepository.cs" />
     <Compile Include="Repository\BuscarPecasRepository.cs" />
     <Compile Include="Repository\BuscarRegioesEstoques.cs" />
     <Compile Include="Repository\CriarPeca.cs" />
     <Compile Include="Repository\DeletarPecaRepository.cs" />
+    <Compile Include="Repository\ObterPecaRepository.cs" />
     <Compile Include="Services\CarregarObras.cs" />
     <Compile Include="Services\CarregarPecas.cs" />
     <Compile Include="Services\CarregarRegioesEstoques.cs" />
     <Compile Include="Services\DeletarPecaService.cs" />
+    <EmbeddedResource Include="ControleAtualizacao.resx">
+      <DependentUpon>ControleAtualizacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleCriacao.resx">
       <DependentUpon>ControleCriacao.cs</DependentUpon>
     </EmbeddedResource>
