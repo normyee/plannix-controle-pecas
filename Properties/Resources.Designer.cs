@@ -73,26 +73,6 @@ namespace ControlePecas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap recarregarIcon {
-            get {
-                object obj = ResourceManager.GetObject("recarregarIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap recarregarIcon1 {
-            get {
-                object obj = ResourceManager.GetObject("recarregarIcon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap recarregarIcone {
             get {
                 object obj = ResourceManager.GetObject("recarregarIcone", resourceCulture);
