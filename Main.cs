@@ -5,6 +5,7 @@ using ControlePecas.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Media;
 using System.Windows.Forms;
 
 namespace ControlePecas
@@ -206,7 +207,17 @@ namespace ControlePecas
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (_selectedPeca != 0)
+            {
+                label3.Visible = false;
+                var controleAtualizacao = new ControleAtualizacao(_selectedPeca);
+                controleAtualizacao.ShowDialog();
+            } 
+            if(_selectedPeca == 0)
+            {
+                SystemSounds.Exclamation.Play();
+                label3.Visible = true;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
