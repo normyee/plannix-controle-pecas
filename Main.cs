@@ -208,5 +208,53 @@ namespace ControlePecas
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var carregarObras = new CarregarObras(new BuscarObrasRepository());
+            var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
+            _criarPecaRepository = new CriarPecaRepository();
+
+            _regioesEstoques = carregarRegioesEstoques.Executar();
+            _obras = carregarObras.Executar();
+
+            comboBox1.DataSource = _obras;
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.ValueMember = "CodObra";
+
+            comboBox2.DataSource = _regioesEstoques;
+            comboBox2.DisplayMember = "Nome";
+            comboBox2.ValueMember = "Id";
+
+            var carregarPecas = new CarregarPecas(new BuscarPecasRepository());
+
+            var pecas = carregarPecas.Executar(_obras[0].CodObra, _regioesEstoques[0].Id);
+
+            var tabela = new DataTable();
+            tabela.Columns.Add("Cod.");
+            tabela.Columns.Add("Peça");
+            tabela.Columns.Add("Obra");
+            tabela.Columns.Add("Status Acab.");
+            tabela.Columns.Add("Região Est.");
+
+            foreach (var p in pecas)
+            {
+                tabela.Rows.Add(
+                    p.CodigoControle,
+                    p.Peca,
+                    p.Obra,
+                    p.StatusAcabamento,
+                    p.RegiaoEstoque
+                );
+            }
+
+            dataGridView1.DataSource = tabela;
+            dataGridView1.Columns["Cod."].Width = 50;
+        }
     }
 }

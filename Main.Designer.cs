@@ -41,11 +41,12 @@ namespace ControlePecas
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,17 +158,9 @@ namespace ControlePecas
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ControlePecas.Properties.Resources.plannix_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(163, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(441, 154);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -183,6 +176,27 @@ namespace ControlePecas
             this.panel1.Size = new System.Drawing.Size(749, 665);
             this.panel1.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ControlePecas.Properties.Resources.plannix_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(163, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(441, 154);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(171)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Image = global::ControlePecas.Properties.Resources.recarregarIcone;
+            this.button5.Location = new System.Drawing.Point(658, 186);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 45);
+            this.button5.TabIndex = 12;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -197,9 +211,9 @@ namespace ControlePecas
             this.Load += new System.EventHandler(this.Main_load);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +231,7 @@ namespace ControlePecas
         private Button button3;
         private Button button4;
         private Panel panel1;
+        private Button button5;
     }
 }
 

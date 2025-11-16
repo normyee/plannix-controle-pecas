@@ -63,9 +63,9 @@ namespace ControlePecas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lixeira_de_reciclagem {
+        internal static System.Drawing.Bitmap plannix_logo {
             get {
-                object obj = ResourceManager.GetObject("lixeira-de-reciclagem", resourceCulture);
+                object obj = ResourceManager.GetObject("plannix_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,29 @@ namespace ControlePecas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap plannix_logo {
+        internal static System.Drawing.Bitmap recarregarIcon {
             get {
-                object obj = ResourceManager.GetObject("plannix_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("recarregarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recarregarIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("recarregarIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recarregarIcone {
+            get {
+                object obj = ResourceManager.GetObject("recarregarIcone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
