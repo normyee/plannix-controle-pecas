@@ -141,3 +141,8 @@ Todas as funcionalidades solicitadas foram implementadas e estão funcionando:
 <div align="center">
   <img src="doc/example.gif" alt="preview do sistema" width="1040">
 </div>
+
+- Funcionalidade de gerar relatório funcionando como esperado também. É gerado em documentos em uma pasta chamada "Relatórios".
+<p align="center">
+  <img src="doc/relatorio.png" width="1040"/>
+</p>
