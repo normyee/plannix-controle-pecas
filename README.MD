@@ -57,7 +57,7 @@ Para a tela de inserção e atualização de peças, optei por **modais** em vez
 - script de `SELECT` elaborado para apresentar, em uma única linha, as seguintes informações:
   - código de controle ✅
   - nome da peça ✅
-  - nome da obra
+  - nome da obra ✅
   - status do acabamento ✅
   - região de estoque ✅
 
