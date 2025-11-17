@@ -10,18 +10,18 @@ namespace ControlePecas
 {
     public partial class ControleCriacao : Form
     {
-        private List<Regiao> _regioesEstoques;
-        private List<Obra> _obras;
-        private CriarPecaRepository _criarPecaRepository;
+        private readonly List<Regiao> _regioesEstoques;
+        private readonly List<Obra> _obras;
+        private readonly CriarPecaRepository _criarPecaRepository;
 
-        private List<KeyValuePair<string, string>> _acabamentoStatus =
+        private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
             new List<KeyValuePair<string, string>>
             {
         new KeyValuePair<string, string>("EM_PRODUCAO", "Em produção"),
         new KeyValuePair<string, string>("PENDENTE", "Pendente"),
         new KeyValuePair<string, string>("FINALIZADO", "Finalizado")
             };
-        private List<KeyValuePair<string, string>> _statusEstoque =
+        private readonly List<KeyValuePair<string, string>> _statusEstoque =
     new List<KeyValuePair<string, string>>
     {
         new KeyValuePair<string, string>("EM_ACABAMENNTO", "Em acabamento"),
@@ -29,7 +29,7 @@ namespace ControlePecas
         new KeyValuePair<string, string>("DISPONIVEL", "Disponível")
     };
 
-        private List<KeyValuePair<string, string>> _statusPeca =
+        private readonly List<KeyValuePair<string, string>> _statusPeca =
 new List<KeyValuePair<string, string>>
 {
         new KeyValuePair<string, string>("ATIVA", "Ativa"),
@@ -47,29 +47,29 @@ new List<KeyValuePair<string, string>>
             MaximizeBox = false;
             MinimizeBox = false;
 
-            comboBox1.DataSource = _regioesEstoques;
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.ValueMember = "Id";
+            RegiaoEstoque.DataSource = _regioesEstoques;
+            RegiaoEstoque.DisplayMember = "Nome";
+            RegiaoEstoque.ValueMember = "Id";
 
-            comboBox4.DataSource = _obras;
-            comboBox4.DisplayMember = "Nome";
-            comboBox4.ValueMember = "CodObra";
+            Obra.DataSource = _obras;
+            Obra.DisplayMember = "Nome";
+            Obra.ValueMember = "CodObra";
 
-            comboBox2.DataSource = _acabamentoStatus;
-            comboBox2.DisplayMember = "Value";
-            comboBox2.ValueMember = "Key";
+            StatusAcabamento.DataSource = _acabamentoStatus;
+            StatusAcabamento.DisplayMember = "Value";
+            StatusAcabamento.ValueMember = "Key";
 
-            comboBox3.DataSource = _statusEstoque;
-            comboBox3.DisplayMember = "Value";
-            comboBox3.ValueMember = "Key";
+            StatusEstoque.DataSource = _statusEstoque;
+            StatusEstoque.DisplayMember = "Value";
+            StatusEstoque.ValueMember = "Key";
 
-            comboBox5.DataSource = _statusPeca;
-            comboBox5.DisplayMember = "Value";
-            comboBox5.ValueMember = "Key";
+            PecaStatus.DataSource = _statusPeca;
+            PecaStatus.DisplayMember = "Value";
+            PecaStatus.ValueMember = "Key";
 
-            comboBox6.DataSource = _regioesEstoques;
-            comboBox6.DisplayMember = "Nome";
-            comboBox6.ValueMember = "Id";
+            SetorAcabamento.DataSource = _regioesEstoques;
+            SetorAcabamento.DisplayMember = "Nome";
+            SetorAcabamento.ValueMember = "Id";
 
             _obras = obras;
         }
@@ -78,15 +78,15 @@ new List<KeyValuePair<string, string>>
         {
             if (!string.IsNullOrWhiteSpace(PecaNome.Text) &&
                 PecaNome.Text != "Nome da peça..." &&
-                numericUpDown2.Value > 0 &&
-                numericUpDown1.Value > 0 &&
-                numericUpDown3.Value > 0 &&
-                comboBox1.SelectedIndex >= 0 &&
-                comboBox2.SelectedIndex >= 0 &&
-                comboBox3.SelectedIndex >= 0 &&
-                comboBox4.SelectedIndex >= 0 &&
-                comboBox5.SelectedIndex >= 0 &&
-                comboBox6.SelectedIndex >= 0 
+                PesoKg.Value > 0 &&
+                VolumeM3.Value > 0 &&
+                Total.Value > 0 &&
+                RegiaoEstoque.SelectedIndex >= 0 &&
+                StatusAcabamento.SelectedIndex >= 0 &&
+                StatusEstoque.SelectedIndex >= 0 &&
+                Obra.SelectedIndex >= 0 &&
+                PecaStatus.SelectedIndex >= 0 &&
+                SetorAcabamento.SelectedIndex >= 0
                 )
             {
                 return true;
@@ -94,99 +94,45 @@ new List<KeyValuePair<string, string>>
             return false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BotaoCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BotaoInserir_Click(object sender, EventArgs e)
         {
             if (!ValidatePecaObra())
             {
-                label15.Visible = true;
+                AvisoErro.Visible = true;
                 SystemSounds.Exclamation.Play();
 
                 return;
             }
 
-            var obraSelected = comboBox4.SelectedItem as Obra;
+            var obraSelected = Obra.SelectedItem as Obra;
 
             var codObra = obraSelected.CodObra;
 
-            PecaObra pecaObra = new PecaObra() { 
+            PecaObra pecaObra = new PecaObra()
+            {
                 NomePeca = PecaNome.Text,
-                DataPeca = dateTimePicker1.Value,
-                PecaStatus = comboBox5.SelectedValue.ToString(),
-                PesoKg = numericUpDown2.Value,
-                VolumeM3 = numericUpDown1.Value,
-                RegiaoEstoque = (int)comboBox1.SelectedValue,
-                AcabamentoStatus = comboBox2.SelectedValue.ToString(),
-                AcabamentoDataInicio = dateTimePicker2.Value,
-                AcabamentoDataFim = dateTimePicker3.Value,
-                SetorAcabamento = (int)comboBox6.SelectedValue,
-                EstoqueTotal = (int)numericUpDown3.Value,
-                DataEstoque = dateTimePicker4.Value,
-                EstoqueStatus = comboBox5.SelectedValue.ToString(),
+                DataPeca = PecaData.Value,
+                PecaStatus = PecaStatus.SelectedValue.ToString(),
+                PesoKg = PesoKg.Value,
+                VolumeM3 = VolumeM3.Value,
+                RegiaoEstoque = (int)RegiaoEstoque.SelectedValue,
+                AcabamentoStatus = StatusAcabamento.SelectedValue.ToString(),
+                AcabamentoDataInicio = DataInicioAcab.Value,
+                AcabamentoDataFim = DataFimAcab.Value,
+                SetorAcabamento = (int)SetorAcabamento.SelectedValue,
+                EstoqueTotal = (int)Total.Value,
+                DataEstoque = DataEstoque.Value,
+                EstoqueStatus = PecaStatus.SelectedValue.ToString(),
                 CodObra = codObra
             };
 
             _criarPecaRepository.Executar(pecaObra);
             Close();
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ControleCriacao_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void PecaNome_Enter(object sender, EventArgs e)
@@ -207,139 +153,5 @@ new List<KeyValuePair<string, string>>
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PecaNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

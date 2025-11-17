@@ -29,59 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleCriacao));
-            this.label2 = new System.Windows.Forms.Label();
+            this.LogoFrase = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BotaoCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.SetorAcabamentoLabel = new System.Windows.Forms.Label();
+            this.SetorAcabamento = new System.Windows.Forms.ComboBox();
+            this.AvisoErro = new System.Windows.Forms.Label();
+            this.PecaStatusLabel = new System.Windows.Forms.Label();
+            this.PecaStatus = new System.Windows.Forms.ComboBox();
+            this.Obra = new System.Windows.Forms.ComboBox();
+            this.ObraLabel = new System.Windows.Forms.Label();
+            this.Total = new System.Windows.Forms.NumericUpDown();
+            this.StatusEstoqueLabel = new System.Windows.Forms.Label();
+            this.StatusEstoque = new System.Windows.Forms.ComboBox();
+            this.DataEstoqueLabel = new System.Windows.Forms.Label();
+            this.DataEstoque = new System.Windows.Forms.DateTimePicker();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.EstoqueTitulo = new System.Windows.Forms.Label();
+            this.StatusAcabamentoLabel = new System.Windows.Forms.Label();
+            this.StatusAcabamento = new System.Windows.Forms.ComboBox();
+            this.DataFimAcabLabel = new System.Windows.Forms.Label();
+            this.DataFimAcab = new System.Windows.Forms.DateTimePicker();
+            this.DataInicioAcabLabel = new System.Windows.Forms.Label();
+            this.DataInicioAcab = new System.Windows.Forms.DateTimePicker();
+            this.AcabamentoTitulo = new System.Windows.Forms.Label();
+            this.RegiaoEstoqueLabel = new System.Windows.Forms.Label();
+            this.RegiaoEstoque = new System.Windows.Forms.ComboBox();
+            this.VolumeM3Label = new System.Windows.Forms.Label();
+            this.VolumeM3 = new System.Windows.Forms.NumericUpDown();
+            this.PesoKgLabel = new System.Windows.Forms.Label();
+            this.PesoKg = new System.Windows.Forms.NumericUpDown();
+            this.PecaData = new System.Windows.Forms.DateTimePicker();
             this.PecaNome = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BotaoInserir = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Total)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeM3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesoKg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // LogoFrase
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(63)))), ((int)(((byte)(113)))));
-            this.label2.Location = new System.Drawing.Point(75, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 28);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Controle de Peças";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.LogoFrase.AutoSize = true;
+            this.LogoFrase.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoFrase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(63)))), ((int)(((byte)(113)))));
+            this.LogoFrase.Location = new System.Drawing.Point(75, 124);
+            this.LogoFrase.Name = "LogoFrase";
+            this.LogoFrase.Size = new System.Drawing.Size(233, 28);
+            this.LogoFrase.TabIndex = 2;
+            this.LogoFrase.Text = "Controle de Peças";
             // 
             // button1
             // 
@@ -94,370 +93,340 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "INSERIR";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // BotaoCancelar
             // 
-            this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(3, 566);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 58);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "CANCELAR";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BotaoCancelar.BackColor = System.Drawing.Color.Crimson;
+            this.BotaoCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BotaoCancelar.ForeColor = System.Drawing.Color.White;
+            this.BotaoCancelar.Location = new System.Drawing.Point(3, 566);
+            this.BotaoCancelar.Name = "BotaoCancelar";
+            this.BotaoCancelar.Size = new System.Drawing.Size(125, 58);
+            this.BotaoCancelar.TabIndex = 9;
+            this.BotaoCancelar.Text = "CANCELAR";
+            this.BotaoCancelar.UseVisualStyleBackColor = false;
+            this.BotaoCancelar.Click += new System.EventHandler(this.BotaoCancelar_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.comboBox6);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.comboBox5);
-            this.panel1.Controls.Add(this.comboBox4);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.numericUpDown3);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker4);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dateTimePicker3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.numericUpDown2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.SetorAcabamentoLabel);
+            this.panel1.Controls.Add(this.SetorAcabamento);
+            this.panel1.Controls.Add(this.AvisoErro);
+            this.panel1.Controls.Add(this.PecaStatusLabel);
+            this.panel1.Controls.Add(this.PecaStatus);
+            this.panel1.Controls.Add(this.Obra);
+            this.panel1.Controls.Add(this.ObraLabel);
+            this.panel1.Controls.Add(this.Total);
+            this.panel1.Controls.Add(this.StatusEstoqueLabel);
+            this.panel1.Controls.Add(this.StatusEstoque);
+            this.panel1.Controls.Add(this.DataEstoqueLabel);
+            this.panel1.Controls.Add(this.DataEstoque);
+            this.panel1.Controls.Add(this.TotalLabel);
+            this.panel1.Controls.Add(this.EstoqueTitulo);
+            this.panel1.Controls.Add(this.StatusAcabamentoLabel);
+            this.panel1.Controls.Add(this.StatusAcabamento);
+            this.panel1.Controls.Add(this.DataFimAcabLabel);
+            this.panel1.Controls.Add(this.DataFimAcab);
+            this.panel1.Controls.Add(this.DataInicioAcabLabel);
+            this.panel1.Controls.Add(this.DataInicioAcab);
+            this.panel1.Controls.Add(this.AcabamentoTitulo);
+            this.panel1.Controls.Add(this.RegiaoEstoqueLabel);
+            this.panel1.Controls.Add(this.RegiaoEstoque);
+            this.panel1.Controls.Add(this.VolumeM3Label);
+            this.panel1.Controls.Add(this.VolumeM3);
+            this.panel1.Controls.Add(this.PesoKgLabel);
+            this.panel1.Controls.Add(this.PesoKg);
+            this.panel1.Controls.Add(this.PecaData);
             this.panel1.Controls.Add(this.PecaNome);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.BotaoInserir);
+            this.panel1.Controls.Add(this.BotaoCancelar);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.LogoFrase);
+            this.panel1.Controls.Add(this.Logo);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 627);
             this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label16
+            // SetorAcabamentoLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(11, 352);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 13);
-            this.label16.TabIndex = 43;
-            this.label16.Text = "Setor de Acabamento:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
+            this.SetorAcabamentoLabel.AutoSize = true;
+            this.SetorAcabamentoLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetorAcabamentoLabel.Location = new System.Drawing.Point(11, 352);
+            this.SetorAcabamentoLabel.Name = "SetorAcabamentoLabel";
+            this.SetorAcabamentoLabel.Size = new System.Drawing.Size(127, 13);
+            this.SetorAcabamentoLabel.TabIndex = 43;
+            this.SetorAcabamentoLabel.Text = "Setor de Acabamento:";
             // 
-            // comboBox6
+            // SetorAcabamento
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(144, 348);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(259, 21);
-            this.comboBox6.TabIndex = 42;
-            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            this.SetorAcabamento.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetorAcabamento.FormattingEnabled = true;
+            this.SetorAcabamento.Location = new System.Drawing.Point(144, 348);
+            this.SetorAcabamento.Name = "SetorAcabamento";
+            this.SetorAcabamento.Size = new System.Drawing.Size(259, 21);
+            this.SetorAcabamento.TabIndex = 42;
             // 
-            // label15
+            // AvisoErro
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Consolas", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(11, 487);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(301, 13);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Ocorreu um erro na validação ou inserção de dado!";
-            this.label15.Visible = false;
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.AvisoErro.AutoSize = true;
+            this.AvisoErro.Font = new System.Drawing.Font("Consolas", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvisoErro.ForeColor = System.Drawing.Color.Red;
+            this.AvisoErro.Location = new System.Drawing.Point(11, 487);
+            this.AvisoErro.Name = "AvisoErro";
+            this.AvisoErro.Size = new System.Drawing.Size(301, 13);
+            this.AvisoErro.TabIndex = 41;
+            this.AvisoErro.Text = "Ocorreu um erro na validação ou inserção de dado!";
+            this.AvisoErro.Visible = false;
             // 
-            // label14
+            // PecaStatusLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(263, 246);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 13);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "Status:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+            this.PecaStatusLabel.AutoSize = true;
+            this.PecaStatusLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PecaStatusLabel.Location = new System.Drawing.Point(263, 246);
+            this.PecaStatusLabel.Name = "PecaStatusLabel";
+            this.PecaStatusLabel.Size = new System.Drawing.Size(49, 13);
+            this.PecaStatusLabel.TabIndex = 40;
+            this.PecaStatusLabel.Text = "Status:";
             // 
-            // comboBox5
+            // PecaStatus
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(318, 242);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(85, 21);
-            this.comboBox5.TabIndex = 39;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.PecaStatus.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PecaStatus.FormattingEnabled = true;
+            this.PecaStatus.Location = new System.Drawing.Point(318, 242);
+            this.PecaStatus.Name = "PecaStatus";
+            this.PecaStatus.Size = new System.Drawing.Size(85, 21);
+            this.PecaStatus.TabIndex = 39;
             // 
-            // comboBox4
+            // Obra
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(54, 453);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(349, 21);
-            this.comboBox4.TabIndex = 38;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.Obra.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Obra.FormattingEnabled = true;
+            this.Obra.Location = new System.Drawing.Point(54, 453);
+            this.Obra.Name = "Obra";
+            this.Obra.Size = new System.Drawing.Size(349, 21);
+            this.Obra.TabIndex = 38;
             // 
-            // label13
+            // ObraLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 457);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Obra:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.ObraLabel.AutoSize = true;
+            this.ObraLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ObraLabel.Location = new System.Drawing.Point(11, 457);
+            this.ObraLabel.Name = "ObraLabel";
+            this.ObraLabel.Size = new System.Drawing.Size(37, 13);
+            this.ObraLabel.TabIndex = 37;
+            this.ObraLabel.Text = "Obra:";
             // 
-            // numericUpDown3
+            // Total
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Location = new System.Drawing.Point(66, 416);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown3.TabIndex = 35;
-            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.Total.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total.Location = new System.Drawing.Point(66, 416);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(70, 20);
+            this.Total.TabIndex = 35;
             // 
-            // label9
+            // StatusEstoqueLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(253, 418);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Status:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.StatusEstoqueLabel.AutoSize = true;
+            this.StatusEstoqueLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusEstoqueLabel.Location = new System.Drawing.Point(253, 418);
+            this.StatusEstoqueLabel.Name = "StatusEstoqueLabel";
+            this.StatusEstoqueLabel.Size = new System.Drawing.Size(49, 13);
+            this.StatusEstoqueLabel.TabIndex = 34;
+            this.StatusEstoqueLabel.Text = "Status:";
             // 
-            // comboBox3
+            // StatusEstoque
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(308, 416);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(95, 21);
-            this.comboBox3.TabIndex = 33;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.StatusEstoque.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusEstoque.FormattingEnabled = true;
+            this.StatusEstoque.Location = new System.Drawing.Point(308, 416);
+            this.StatusEstoque.Name = "StatusEstoque";
+            this.StatusEstoque.Size = new System.Drawing.Size(95, 21);
+            this.StatusEstoque.TabIndex = 33;
             // 
-            // label10
+            // DataEstoqueLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(141, 418);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Data:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.DataEstoqueLabel.AutoSize = true;
+            this.DataEstoqueLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataEstoqueLabel.Location = new System.Drawing.Point(141, 418);
+            this.DataEstoqueLabel.Name = "DataEstoqueLabel";
+            this.DataEstoqueLabel.Size = new System.Drawing.Size(37, 13);
+            this.DataEstoqueLabel.TabIndex = 32;
+            this.DataEstoqueLabel.Text = "Data:";
             // 
-            // dateTimePicker4
+            // DataEstoque
             // 
-            this.dateTimePicker4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(179, 416);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(68, 20);
-            this.dateTimePicker4.TabIndex = 31;
-            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
+            this.DataEstoque.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataEstoque.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataEstoque.Location = new System.Drawing.Point(179, 416);
+            this.DataEstoque.Name = "DataEstoque";
+            this.DataEstoque.Size = new System.Drawing.Size(68, 20);
+            this.DataEstoque.TabIndex = 31;
             // 
-            // label11
+            // TotalLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 418);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 13);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Total:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLabel.Location = new System.Drawing.Point(11, 418);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(43, 13);
+            this.TotalLabel.TabIndex = 30;
+            this.TotalLabel.Text = "Total:";
             // 
-            // label12
+            // EstoqueTitulo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(168, 382);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 19);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Estoque";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.EstoqueTitulo.AutoSize = true;
+            this.EstoqueTitulo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstoqueTitulo.ForeColor = System.Drawing.Color.Gray;
+            this.EstoqueTitulo.Location = new System.Drawing.Point(168, 382);
+            this.EstoqueTitulo.Name = "EstoqueTitulo";
+            this.EstoqueTitulo.Size = new System.Drawing.Size(72, 19);
+            this.EstoqueTitulo.TabIndex = 28;
+            this.EstoqueTitulo.Text = "Estoque";
             // 
-            // label8
+            // StatusAcabamentoLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(253, 316);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Status:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.StatusAcabamentoLabel.AutoSize = true;
+            this.StatusAcabamentoLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusAcabamentoLabel.Location = new System.Drawing.Point(253, 316);
+            this.StatusAcabamentoLabel.Name = "StatusAcabamentoLabel";
+            this.StatusAcabamentoLabel.Size = new System.Drawing.Size(49, 13);
+            this.StatusAcabamentoLabel.TabIndex = 27;
+            this.StatusAcabamentoLabel.Text = "Status:";
             // 
-            // comboBox2
+            // StatusAcabamento
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(308, 312);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(95, 21);
-            this.comboBox2.TabIndex = 26;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.StatusAcabamento.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusAcabamento.FormattingEnabled = true;
+            this.StatusAcabamento.Location = new System.Drawing.Point(308, 312);
+            this.StatusAcabamento.Name = "StatusAcabamento";
+            this.StatusAcabamento.Size = new System.Drawing.Size(95, 21);
+            this.StatusAcabamento.TabIndex = 26;
             // 
-            // label7
+            // DataFimAcabLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(142, 316);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Fim:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.DataFimAcabLabel.AutoSize = true;
+            this.DataFimAcabLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataFimAcabLabel.Location = new System.Drawing.Point(142, 316);
+            this.DataFimAcabLabel.Name = "DataFimAcabLabel";
+            this.DataFimAcabLabel.Size = new System.Drawing.Size(31, 13);
+            this.DataFimAcabLabel.TabIndex = 25;
+            this.DataFimAcabLabel.Text = "Fim:";
             // 
-            // dateTimePicker3
+            // DataFimAcab
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(179, 312);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(68, 20);
-            this.dateTimePicker3.TabIndex = 24;
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
+            this.DataFimAcab.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataFimAcab.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataFimAcab.Location = new System.Drawing.Point(179, 312);
+            this.DataFimAcab.Name = "DataFimAcab";
+            this.DataFimAcab.Size = new System.Drawing.Size(68, 20);
+            this.DataFimAcab.TabIndex = 24;
             // 
-            // label6
+            // DataInicioAcabLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 316);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Início:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.DataInicioAcabLabel.AutoSize = true;
+            this.DataInicioAcabLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataInicioAcabLabel.Location = new System.Drawing.Point(11, 316);
+            this.DataInicioAcabLabel.Name = "DataInicioAcabLabel";
+            this.DataInicioAcabLabel.Size = new System.Drawing.Size(49, 13);
+            this.DataInicioAcabLabel.TabIndex = 23;
+            this.DataInicioAcabLabel.Text = "Início:";
             // 
-            // dateTimePicker2
+            // DataInicioAcab
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(66, 312);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(70, 20);
-            this.dateTimePicker2.TabIndex = 22;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.DataInicioAcab.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataInicioAcab.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataInicioAcab.Location = new System.Drawing.Point(66, 312);
+            this.DataInicioAcab.Name = "DataInicioAcab";
+            this.DataInicioAcab.Size = new System.Drawing.Size(70, 20);
+            this.DataInicioAcab.TabIndex = 22;
             // 
-            // label5
+            // AcabamentoTitulo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(153, 282);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 19);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Acabamento";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.AcabamentoTitulo.AutoSize = true;
+            this.AcabamentoTitulo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AcabamentoTitulo.ForeColor = System.Drawing.Color.Gray;
+            this.AcabamentoTitulo.Location = new System.Drawing.Point(153, 282);
+            this.AcabamentoTitulo.Name = "AcabamentoTitulo";
+            this.AcabamentoTitulo.Size = new System.Drawing.Size(99, 19);
+            this.AcabamentoTitulo.TabIndex = 21;
+            this.AcabamentoTitulo.Text = "Acabamento";
             // 
-            // label4
+            // RegiaoEstoqueLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 246);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Região de Estoque:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.RegiaoEstoqueLabel.AutoSize = true;
+            this.RegiaoEstoqueLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegiaoEstoqueLabel.Location = new System.Drawing.Point(11, 246);
+            this.RegiaoEstoqueLabel.Name = "RegiaoEstoqueLabel";
+            this.RegiaoEstoqueLabel.Size = new System.Drawing.Size(115, 13);
+            this.RegiaoEstoqueLabel.TabIndex = 20;
+            this.RegiaoEstoqueLabel.Text = "Região de Estoque:";
             // 
-            // comboBox1
+            // RegiaoEstoque
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 242);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 21);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.RegiaoEstoque.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegiaoEstoque.FormattingEnabled = true;
+            this.RegiaoEstoque.Location = new System.Drawing.Point(126, 242);
+            this.RegiaoEstoque.Name = "RegiaoEstoque";
+            this.RegiaoEstoque.Size = new System.Drawing.Size(131, 21);
+            this.RegiaoEstoque.TabIndex = 19;
             // 
-            // label1
+            // VolumeM3Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Volume M3:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            this.VolumeM3Label.AutoSize = true;
+            this.VolumeM3Label.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolumeM3Label.Location = new System.Drawing.Point(204, 219);
+            this.VolumeM3Label.Name = "VolumeM3Label";
+            this.VolumeM3Label.Size = new System.Drawing.Size(67, 13);
+            this.VolumeM3Label.TabIndex = 18;
+            this.VolumeM3Label.Text = "Volume M3:";
             // 
-            // numericUpDown1
+            // VolumeM3
             // 
-            this.numericUpDown1.DecimalPlaces = 3;
-            this.numericUpDown1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(271, 216);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.VolumeM3.DecimalPlaces = 3;
+            this.VolumeM3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolumeM3.Location = new System.Drawing.Point(271, 216);
+            this.VolumeM3.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(132, 20);
-            this.numericUpDown1.TabIndex = 17;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_2);
+            this.VolumeM3.Name = "VolumeM3";
+            this.VolumeM3.Size = new System.Drawing.Size(132, 20);
+            this.VolumeM3.TabIndex = 17;
             // 
-            // label3
+            // PesoKgLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Peso KG:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.PesoKgLabel.AutoSize = true;
+            this.PesoKgLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PesoKgLabel.Location = new System.Drawing.Point(11, 219);
+            this.PesoKgLabel.Name = "PesoKgLabel";
+            this.PesoKgLabel.Size = new System.Drawing.Size(55, 13);
+            this.PesoKgLabel.TabIndex = 16;
+            this.PesoKgLabel.Text = "Peso KG:";
             // 
-            // numericUpDown2
+            // PesoKg
             // 
-            this.numericUpDown2.DecimalPlaces = 3;
-            this.numericUpDown2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(66, 216);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.PesoKg.DecimalPlaces = 3;
+            this.PesoKg.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PesoKg.Location = new System.Drawing.Point(66, 216);
+            this.PesoKg.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(131, 20);
-            this.numericUpDown2.TabIndex = 15;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.PesoKg.Name = "PesoKg";
+            this.PesoKg.Size = new System.Drawing.Size(131, 20);
+            this.PesoKg.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // PecaData
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(314, 190);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(89, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.PecaData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PecaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.PecaData.Location = new System.Drawing.Point(314, 190);
+            this.PecaData.Name = "PecaData";
+            this.PecaData.Size = new System.Drawing.Size(89, 20);
+            this.PecaData.TabIndex = 12;
             // 
             // PecaNome
             // 
@@ -468,32 +437,30 @@
             this.PecaNome.Size = new System.Drawing.Size(294, 20);
             this.PecaNome.TabIndex = 11;
             this.PecaNome.Text = "Nome da peça...";
-            this.PecaNome.TextChanged += new System.EventHandler(this.PecaNome_TextChanged);
             this.PecaNome.Enter += new System.EventHandler(this.PecaNome_Enter);
             this.PecaNome.Leave += new System.EventHandler(this.PecaNome_Leave);
             // 
-            // button2
+            // BotaoInserir
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(171)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(287, 566);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 58);
-            this.button2.TabIndex = 10;
-            this.button2.Text = " INSERIR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BotaoInserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(171)))));
+            this.BotaoInserir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BotaoInserir.ForeColor = System.Drawing.Color.White;
+            this.BotaoInserir.Location = new System.Drawing.Point(287, 566);
+            this.BotaoInserir.Name = "BotaoInserir";
+            this.BotaoInserir.Size = new System.Drawing.Size(125, 58);
+            this.BotaoInserir.TabIndex = 10;
+            this.BotaoInserir.Text = " INSERIR";
+            this.BotaoInserir.UseVisualStyleBackColor = false;
+            this.BotaoInserir.Click += new System.EventHandler(this.BotaoInserir_Click);
             // 
-            // pictureBox1
+            // Logo
             // 
-            this.pictureBox1.Image = global::ControlePecas.Properties.Resources.plannix_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(389, 139);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Logo.Image = global::ControlePecas.Properties.Resources.plannix_logo;
+            this.Logo.Location = new System.Drawing.Point(14, 13);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(389, 139);
+            this.Logo.TabIndex = 1;
+            this.Logo.TabStop = false;
             // 
             // ControleCriacao
             // 
@@ -504,53 +471,52 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ControleCriacao";
             this.Text = "ControleCriacao";
-            this.Load += new System.EventHandler(this.ControleCriacao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Total)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeM3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesoKg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Label LogoFrase;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BotaoCancelar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BotaoInserir;
         private System.Windows.Forms.TextBox PecaNome;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.DateTimePicker PecaData;
+        private System.Windows.Forms.Label PesoKgLabel;
+        private System.Windows.Forms.NumericUpDown PesoKg;
+        private System.Windows.Forms.Label VolumeM3Label;
+        private System.Windows.Forms.NumericUpDown VolumeM3;
+        private System.Windows.Forms.Label RegiaoEstoqueLabel;
+        private System.Windows.Forms.ComboBox RegiaoEstoque;
+        private System.Windows.Forms.Label AcabamentoTitulo;
+        private System.Windows.Forms.Label StatusAcabamentoLabel;
+        private System.Windows.Forms.ComboBox StatusAcabamento;
+        private System.Windows.Forms.Label DataFimAcabLabel;
+        private System.Windows.Forms.DateTimePicker DataFimAcab;
+        private System.Windows.Forms.Label DataInicioAcabLabel;
+        private System.Windows.Forms.DateTimePicker DataInicioAcab;
+        private System.Windows.Forms.Label StatusEstoqueLabel;
+        private System.Windows.Forms.ComboBox StatusEstoque;
+        private System.Windows.Forms.Label DataEstoqueLabel;
+        private System.Windows.Forms.DateTimePicker DataEstoque;
+        private System.Windows.Forms.Label TotalLabel;
+        private System.Windows.Forms.Label EstoqueTitulo;
+        private System.Windows.Forms.NumericUpDown Total;
+        private System.Windows.Forms.Label ObraLabel;
+        private System.Windows.Forms.ComboBox Obra;
+        private System.Windows.Forms.Label PecaStatusLabel;
+        private System.Windows.Forms.ComboBox PecaStatus;
+        private System.Windows.Forms.Label AvisoErro;
+        private System.Windows.Forms.Label SetorAcabamentoLabel;
+        private System.Windows.Forms.ComboBox SetorAcabamento;
     }
 }
