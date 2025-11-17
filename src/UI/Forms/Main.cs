@@ -23,8 +23,6 @@ namespace ControlePecas
         private int _selectedCodObra = 0;
         private int _selectedRegiaoEstoque = 0;
 
-        private AtualizarPecaRepo _atualizarPecaRepository;
-
         private GerarRelatorio _gerarRelatorio;
         private CarregarObras _carregarObras;
         private CarregarRegioesEstoques _carregarRegioesEstoques;
