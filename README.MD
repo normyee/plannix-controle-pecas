@@ -43,6 +43,10 @@ Ademais, acabamento possui campos de **data_inicio** e **data_fim** para control
 
 Para a tela de inserção e atualização de peças, optei por **modais** em vez de trocar panels, garantindo uma navegação mais fluida e intuitiva.
 
+## Documentação
+
+- [Como o projeto está estruturado?](doc/PROJECT-STRUCTURE.MD/)
+
 # Teste técnico - resumo do projeto
 
 ## 1. Criação do banco de dados (SQL Server) ✅
