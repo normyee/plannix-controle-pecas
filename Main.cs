@@ -25,6 +25,7 @@ namespace ControlePecas
         private CriarPecaRepository _criarPecaRepository;
         private ObterPecaRepository _obterPecaRepository;
         private AtualizarPecaRepository _atualizarPecaRepository;
+        private GerarRelatorioService _gerarRelatorioService;
         public Main()
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace ControlePecas
 
         private void Main_load(object sender, EventArgs e)
         {
-
             var carregarObras = new CarregarObras(new BuscarObrasRepository());
             var carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepository());
             _obterPecaRepository = new ObterPecaRepository();
@@ -75,6 +75,8 @@ namespace ControlePecas
             dataGridView1.DataSource = tabela;
             dataGridView1.Columns["Cod."].Width = 50;
 
+
+            _gerarRelatorioService = new GerarRelatorioService();
             _carregouForm = true;
         }
        private void ObraComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -282,6 +284,12 @@ namespace ControlePecas
             dataGridView1.Columns["Cod."].Width = 50;
 
             _emReload = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable relatorio = (DataTable)dataGridView1.DataSource;
+            _gerarRelatorioService.Executar(relatorio);
         }
     }
 }
