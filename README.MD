@@ -28,20 +28,26 @@ acabamento = finalizado → estoque = disponivel
 
 pensei em fazer a tela de inserir nova peça ou atualizar peça trocando panels, mas achei mais interessante trabalhar com modal
 
-1 - Criação do Banco de Dados (SQL Server) ✅
-1.1. Crie o banco de dados conforme o Diagrama de Dados fornecido. ✅
-1.1.1. Considere que o Diagrama de Dados está incompleto e faça as correções e ajustes que julgar pertinentes. ✅
-1.2. Desenvolva um script de INSERT para cada uma das tabelas especificadas no Diagrama de Dados. ✅
-1.3. Elabore um script de SELECT que apresente, em uma única linha, as seguintes informações: Código de Controle; Nome da Peça; Nome da Obra; Status do Acabamento; Região de Estoque ✅
+# teste técnico - resumo do projeto
 
-2 - Desenvolvimento de Sistema (C#)
-2.1. Crie um sistema em C# Windows Forms com os seguintes requisitos:
-2.1.1. O sistema deve conter pelo menos dois
-formulários relacionados ao banco de dados criado na etapa anterior.
-2.1.2. Implemente um CRUD com utilização de um DataGridView para listar os itens cadastrados.
-2.1.3. Adicione filtros por Obra e Região de Estoque no sistema.
-2.2. O sistema deve permitir a extração de um relatório em PDF com os cadastros realizados.
-2.2.1. Inclua os filtros mencionados anteriormente (Obra e Região de Estoque) no relatório gerado.
+## 1. Criação do banco de dados (SQL Server) ✅
+
+- banco de dados criado conforme o diagrama fornecido. ✅
+- diagrama ajustado para corrigir inconsistências e ✅complementar informações faltantes.
+- scripts de `INSERT` desenvolvidos para todas as tabelas. ✅
+- script de `SELECT` elaborado para apresentar, em uma única linha, as seguintes informações:
+  - código de controle ✅
+  - nome da peça ✅
+  - nome da obra
+  - status do acabamento ✅
+  - região de estoque ✅
+
+## 2. Desenvolvimento do sistema (C# Windows Forms) ✅
+
+- sistema desenvolvido com dois formulários relacionados ao banco de dados. ✅
+- CRUD implementado com `DataGridView` para listar os itens cadastrados. ✅
+- filtros implementados por **obra** e **região de estoque**. ✅
+- extração de relatório em PDF implementada, incluindo os filtros por obra e região de estoque. ✅
 
 Relacionamento:
 
@@ -77,27 +83,37 @@ Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Stud
 
 ## Opção 2: Com Docker
 
-1. **Entre** no diretório `Scripts` do projeto.
-2. Execute o script no container Docker:
+1. Primeiro suba a imagem do projeto:
+
+```bash
+docker-compose up -d
+```
+
+2. **Entre** no diretório `Scripts` do projeto.
+3. Execute o script no container Docker:
 
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_create_tables.sql"
 ```
 
-> 1.1 e 1.1.1 ✅ 3. Verifique se as tabelas foram criadas
+> 1.1 e 1.1.1 ✅
+
+4. Verifique se as tabelas foram criadas
 
 ```bash
 docker run -it --rm --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -Q 'SELECT name FROM sys.tables;'"
 ```
 
-4. Popular o banco de dados com items
+5. Popular o banco de dados com items
 
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -i /scripts/script_insert.sql"
 
 ```
 
-> 1.2 ✅ 5. Selecionar linha com `código de controle`, `nome da peça`, `nome da obra`,`status do acabamento`, `região de estoque`
+> 1.2 ✅
+
+6. Selecionar linha com `código de controle`, `nome da peça`, `nome da obra`,`status do acabamento`, `região de estoque`
 
 ```bash
 docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-tools bash -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'ControlePecas@2025' -d master -W -s '|' -i /scripts/script_select.sql"
@@ -109,3 +125,21 @@ docker run -it --rm -v "${PWD}:/scripts" --network host mcr.microsoft.com/mssql-
 ---
 
 # Desafio 2
+
+Todas as funcionalidades solicitadas foram implementadas e estão funcionando:
+
+- criação do banco de dados com ajustes no diagrama
+- scripts de `INSERT` para todas as tabelas
+- `SELECT` consolidado com código de controle, nome da peça, nome da obra, status do acabamento e região de estoque
+- sistema em c# windows forms com dois formulários
+- CRUD completo com `DataGridView`
+- filtros por obra e região de estoque
+- geração de relatório em PDF com filtros aplicados
+
+### Preview
+
+<div align="center">
+  <img src="doc/demo.gif" alt="preview do sistema" width="1040">
+</div>
+
+
