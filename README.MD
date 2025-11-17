@@ -2,33 +2,48 @@
   <img src="https://plannix.com.br/wp-content/webp-express/webp-images/uploads/2021/07/cropped-logo-plannix.png.webp" width="280"/>
 </p>
 
-data_entrega ficou nula -> obra futura às vezes não tem data clara
+# sistema de controle de peças - pré-fabricados (Teste Técnico)
 
-renomeei os nomes das tabelas para ficarem mais claros
-POBRAS -> obras
-PJREGPROJETO -> pecas
-LGACABAMENTO -> acabamentos
-LGESTOQUE -> estoques
+Esse é um desafio com Windows Forms desenvolvido para controle de peças no contexto de pré-fabricados. O sistema gerencia obras, peças, acabamentos e estoques, permitindo rastreabilidade e relatórios em PDF.
 
-além disso acrescentei uma tabela nova chamada "regioes" para substituir o "Regiao" de acabamento e estoque. a razão foi a seguinte: e se eu quiser trocar a região do estoque ou acabamento? Teria que atualizar cada registro de estoque, por exemplo.
+Foram aplicados conceitos modernos de arquitetura e boas práticas, incluindo:
 
-usei primary key composta para estoque para evitar duplicidade. poderia ter o mesmo id_peca e id_acabamento em um registro de estoque, mas fazendo ser a primary key isso é evitado
+- **Inversão de dependências** para maior flexibilidade e testabilidade
+- **Arquitetura view model** para separar a lógica de apresentação da lógica de negócio
+- **Docker** para facilitar o ambiente de desenvolvimento e deploy
 
-peca tera os status: ATIVA, INATIVA
-estoque terá dois estados: AGUARDANDO_ACABAMENTO, EM_ACABAMENTO e DISPONIVEL
-acabamento terá três estados: PENDENTE, EM_PRODUCAO e FINALIZADO
-adicionei data_fim (quando finaliza) e data_inicio para acabamento
+## Banco de dados
 
-obra terá: ATIVA, CONCLUIDA e INATIVA
+Algumas alterações e melhorias foram feitas em relação ao diagrama inicial:
 
-MAPEAMENTO:
-acabamento = pendente → estoque = aguardando_acabamento
-acabamento = em_producao → estoque = em_acabamento
-acabamento = finalizado → estoque = disponivel
+- Tabelas renomeadas para maior clareza:
+  - `POBRAS` → `obras`
+  - `PJREGPROJETO` → `pecas`
+  - `LGACABAMENTO` → `acabamentos`
+  - `LGESTOQUE` → `estoques`
+- Criada a tabela **regioes** para substituir o campo "Regiao" de acabamentos e estoques, permitindo alterar a região sem atualizar registros individuais.
+- **estoques** possui **primary key composta** (`id_peca + id_acabamento`) para evitar duplicidades.
 
-pensei em fazer a tela de inserir nova peça ou atualizar peça trocando panels, mas achei mais interessante trabalhar com modal
+## Estados e mapeamentos
 
-# teste técnico - resumo do projeto
+- **peça**: `ATIVA`, `INATIVA`
+- **estoque**: `AGUARDANDO_ACABAMENTO`, `EM_ACABAMENTO`, `DISPONIVEL`
+- **acabamento**: `PENDENTE`, `EM_PRODUCAO`, `FINALIZADO`
+- **obra**: `ATIVA`, `CONCLUIDA`, `INATIVA`
+
+**Mapeamento entre acabamento e estoque:**
+
+- acabamento `PENDENTE` → estoque `AGUARDANDO_ACABAMENTO`
+- acabamento `EM_PRODUCAO` → estoque `EM_ACABAMENTO`
+- acabamento `FINALIZADO` → estoque `DISPONIVEL`
+
+Ademais, acabamento possui campos de **data_inicio** e **data_fim** para controle temporal.
+
+## Interface do usuário
+
+Para a tela de inserção e atualização de peças, optei por **modais** em vez de trocar panels, garantindo uma navegação mais fluida e intuitiva.
+
+# Teste técnico - resumo do projeto
 
 ## 1. Criação do banco de dados (SQL Server) ✅
 
@@ -142,7 +157,7 @@ Todas as funcionalidades solicitadas foram implementadas e estão funcionando:
   <img src="doc/example.gif" alt="preview do sistema" width="1040">
 </div>
 
-- Funcionalidade de gerar relatório funcionando como esperado também. É gerado em documentos em uma pasta chamada "Relatórios".
+- Funcionalidade de gerar relatório funcionando como esperado também. É gerado em documentos em uma pasta chamada "Relatórios":
 <p align="center">
   <img src="doc/relatorio.png" width="1040"/>
 </p>
