@@ -10,20 +10,20 @@ namespace ControlePecas
 {
     public partial class ControleAtualizacao : Form
     {
-        private int _codControle;
-        private List<Regiao> _regioesEstoques;
-        private List<Obra> _obras;
-        private ObterPecaRepository _obterPecaRepository;
-        private AtualizarPecaRepository _atualizarPecaRepository;
+        private readonly int _codControle;
+        private readonly List<Regiao> _regioesEstoques;
+        private readonly List<Obra> _obras;
+        private readonly ObterPecaRepository _obterPecaRepository;
+        private readonly AtualizarPecaRepository _atualizarPecaRepository;
 
-        private List<KeyValuePair<string, string>> _acabamentoStatus =
+        private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
     new List<KeyValuePair<string, string>>
     {
         new KeyValuePair<string, string>("EM_PRODUCAO", "Em produção"),
         new KeyValuePair<string, string>("PENDENTE", "Pendente"),
         new KeyValuePair<string, string>("FINALIZADO", "Finalizado")
     };
-        private List<KeyValuePair<string, string>> _statusEstoque =
+        private readonly List<KeyValuePair<string, string>> _statusEstoque =
     new List<KeyValuePair<string, string>>
     {
         new KeyValuePair<string, string>("EM_ACABAMENNTO", "Em acabamento"),
@@ -31,7 +31,7 @@ namespace ControlePecas
         new KeyValuePair<string, string>("DISPONIVEL", "Disponível")
     };
 
-        private List<KeyValuePair<string, string>> _statusPeca =
+        private readonly List<KeyValuePair<string, string>> _statusPeca =
 new List<KeyValuePair<string, string>>
 {
         new KeyValuePair<string, string>("ATIVA", "Ativa"),
@@ -52,29 +52,29 @@ new List<KeyValuePair<string, string>>
             MaximizeBox = false;
             MinimizeBox = false;
 
-            comboBox1.DataSource = _regioesEstoques;
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.ValueMember = "Id";
+            RegiaoEstoque.DataSource = _regioesEstoques;
+            RegiaoEstoque.DisplayMember = "Nome";
+            RegiaoEstoque.ValueMember = "Id";
 
-            comboBox4.DataSource = _obras;
-            comboBox4.DisplayMember = "Nome";
-            comboBox4.ValueMember = "CodObra";
+            Obra.DataSource = _obras;
+            Obra.DisplayMember = "Nome";
+            Obra.ValueMember = "CodObra";
 
-            comboBox2.DataSource = _acabamentoStatus;
-            comboBox2.DisplayMember = "Value";
-            comboBox2.ValueMember = "Key";
+            StatusAcabamento.DataSource = _acabamentoStatus;
+            StatusAcabamento.DisplayMember = "Value";
+            StatusAcabamento.ValueMember = "Key";
 
-            comboBox3.DataSource = _statusEstoque;
-            comboBox3.DisplayMember = "Value";
-            comboBox3.ValueMember = "Key";
+            StatusEstoque.DataSource = _statusEstoque;
+            StatusEstoque.DisplayMember = "Value";
+            StatusEstoque.ValueMember = "Key";
 
-            comboBox5.DataSource = _statusPeca;
-            comboBox5.DisplayMember = "Value";
-            comboBox5.ValueMember = "Key";
+            StatusPeca.DataSource = _statusPeca;
+            StatusPeca.DisplayMember = "Value";
+            StatusPeca.ValueMember = "Key";
 
-            comboBox6.DataSource = _regioesEstoques;
-            comboBox6.DisplayMember = "Nome";
-            comboBox6.ValueMember = "Id";
+            SetorAcabamento.DataSource = _regioesEstoques;
+            SetorAcabamento.DisplayMember = "Nome";
+            SetorAcabamento.ValueMember = "Id";
 
             _obras = obras;
 
@@ -82,18 +82,18 @@ new List<KeyValuePair<string, string>>
 
             PecaNome.Text = pecaObra.NomePeca;
             PecaNome.ForeColor = Color.Black;
-            dateTimePicker1.Value = pecaObra.DataPeca;
-            numericUpDown2.Value = pecaObra.PesoKg;
-            numericUpDown1.Value = pecaObra.VolumeM3;
-            comboBox1.SelectedValue = pecaObra.RegiaoEstoque;
-            comboBox5.SelectedValue = pecaObra.PecaStatus;
-            dateTimePicker2.Value = pecaObra.AcabamentoDataInicio;
-            dateTimePicker3.Value = pecaObra.AcabamentoDataFim;
-            comboBox2.SelectedValue = pecaObra.AcabamentoStatus;
-            comboBox6.SelectedValue = pecaObra.SetorAcabamento;
-            numericUpDown3.Value = pecaObra.EstoqueTotal;
-            dateTimePicker4.Value = pecaObra.DataEstoque;
-            comboBox4.SelectedValue = pecaObra.CodObra;
+            DataPeca.Value = pecaObra.DataPeca;
+            PesoKg.Value = pecaObra.PesoKg;
+            VolumeM3.Value = pecaObra.VolumeM3;
+            RegiaoEstoque.SelectedValue = pecaObra.RegiaoEstoque;
+            StatusPeca.SelectedValue = pecaObra.PecaStatus;
+            AcabDataInicio.Value = pecaObra.AcabamentoDataInicio;
+            AcabDataFim.Value = pecaObra.AcabamentoDataFim;
+            StatusAcabamento.SelectedValue = pecaObra.AcabamentoStatus;
+            SetorAcabamento.SelectedValue = pecaObra.SetorAcabamento;
+            Total.Value = pecaObra.EstoqueTotal;
+            DataEstoque.Value = pecaObra.DataEstoque;
+            Obra.SelectedValue = pecaObra.CodObra;
 
 
         }
@@ -102,15 +102,15 @@ new List<KeyValuePair<string, string>>
         {
             if (!string.IsNullOrWhiteSpace(PecaNome.Text) &&
                 PecaNome.Text != "Nome da peça..." &&
-                numericUpDown2.Value > 0 &&
-                numericUpDown1.Value > 0 &&
-                numericUpDown3.Value > 0 &&
-                comboBox1.SelectedIndex >= 0 &&
-                comboBox2.SelectedIndex >= 0 &&
-                comboBox3.SelectedIndex >= 0 &&
-                comboBox4.SelectedIndex >= 0 &&
-                comboBox5.SelectedIndex >= 0 &&
-                comboBox6.SelectedIndex >= 0
+                PesoKg.Value > 0 &&
+                VolumeM3.Value > 0 &&
+                Total.Value > 0 &&
+                RegiaoEstoque.SelectedIndex >= 0 &&
+                StatusAcabamento.SelectedIndex >= 0 &&
+                StatusEstoque.SelectedIndex >= 0 &&
+                Obra.SelectedIndex >= 0 &&
+                StatusPeca.SelectedIndex >= 0 &&
+                SetorAcabamento.SelectedIndex >= 0
                 )
             {
                 return true;
@@ -118,35 +118,35 @@ new List<KeyValuePair<string, string>>
             return false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AtualizarPeca_Click(object sender, EventArgs e)
         {
             if (!ValidatePecaObra())
             {
-                label15.Visible = true;
+                ErroAviso.Visible = true;
                 SystemSounds.Exclamation.Play();
 
                 return;
             }
 
-            var obraSelected = comboBox4.SelectedItem as Obra;
+            var obraSelected = Obra.SelectedItem as Obra;
 
             var codObra = obraSelected.CodObra;
 
             PecaObra pecaObra = new PecaObra()
             {
                 NomePeca = PecaNome.Text,
-                DataPeca = dateTimePicker1.Value,
-                PecaStatus = comboBox5.SelectedValue.ToString(),
-                PesoKg = numericUpDown2.Value,
-                VolumeM3 = numericUpDown1.Value,
-                RegiaoEstoque = (int)comboBox1.SelectedValue,
-                AcabamentoStatus = comboBox2.SelectedValue.ToString(),
-                AcabamentoDataInicio = dateTimePicker2.Value,
-                AcabamentoDataFim = dateTimePicker3.Value,
-                SetorAcabamento = (int)comboBox6.SelectedValue,
-                EstoqueTotal = (int)numericUpDown3.Value,
-                DataEstoque = dateTimePicker4.Value,
-                EstoqueStatus = comboBox5.SelectedValue.ToString(),
+                DataPeca = DataPeca.Value,
+                PecaStatus = StatusPeca.SelectedValue.ToString(),
+                PesoKg = PesoKg.Value,
+                VolumeM3 = VolumeM3.Value,
+                RegiaoEstoque = (int)RegiaoEstoque.SelectedValue,
+                AcabamentoStatus = StatusAcabamento.SelectedValue.ToString(),
+                AcabamentoDataInicio = AcabDataInicio.Value,
+                AcabamentoDataFim = AcabDataFim.Value,
+                SetorAcabamento = (int)SetorAcabamento.SelectedValue,
+                EstoqueTotal = (int)Total.Value,
+                DataEstoque = DataEstoque.Value,
+                EstoqueStatus = StatusPeca.SelectedValue.ToString(),
                 CodObra = codObra
             };
             _atualizarPecaRepository.Executar(_codControle, pecaObra);
@@ -169,6 +169,11 @@ new List<KeyValuePair<string, string>>
                 PecaNome.Text = "Nome da peça...";
                 PecaNome.ForeColor = Color.Gray;
             }
+        }
+
+        private void BotaoCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
