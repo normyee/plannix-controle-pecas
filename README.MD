@@ -94,7 +94,8 @@ Você terá duas opções para seguir. Uma é executar pelo gerenciador de banco
 
 ## Opção 1: Com gerenciador de banco
 
-Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Studio**, **DataGrip** ou **SQL Server Management Studio** com banco de dados já existente ou novo e execute ou copie o script, cole e execute. **Faça** o mesmo para `script_insert.sql` e `script_select.sql` de todas as etapas do **desafio 1**
+Abra o script `script_create_tables.sql` em uma ferramenta como **Beekeeper Studio**, **DataGrip** ou **SQL Server Management Studio** com banco de dados já existente ou novo e execute ou copie o script, cole e execute. **Faça** o mesmo para `script_insert.sql` e `script_select.sql` de todas as etapas do **desafio 1**.
+> OBS: a **string** de conexão se encontra no `App.config`. E está como `DefaultConnection` no arquivo.
 
 > 1.1, 1.1.1, 1.2 e 1.3 ✅
 
