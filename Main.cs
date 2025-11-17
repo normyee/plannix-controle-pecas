@@ -42,13 +42,13 @@ namespace ControlePecas
             _regioesEstoques = carregarRegioesEstoques.Executar();
             _obras = carregarObras.Executar();
 
-            comboBox1.DataSource = _obras;
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.ValueMember = "CodObra";
+            ObrasFiltro.DataSource = _obras;
+            ObrasFiltro.DisplayMember = "Nome";
+            ObrasFiltro.ValueMember = "CodObra";
 
-            comboBox2.DataSource = _regioesEstoques;
-            comboBox2.DisplayMember = "Nome";
-            comboBox2.ValueMember = "Id";
+            RegiaoEstoqueFiltro.DataSource = _regioesEstoques;
+            RegiaoEstoqueFiltro.DisplayMember = "Nome";
+            RegiaoEstoqueFiltro.ValueMember = "Id";
 
             var carregarPecas = new CarregarPecas(new BuscarPecasRepository());
 
@@ -72,8 +72,8 @@ namespace ControlePecas
                 );
             }
 
-            dataGridView1.DataSource = tabela;
-            dataGridView1.Columns["Cod."].Width = 50;
+            PecaObraView.DataSource = tabela;
+            PecaObraView.Columns["Cod."].Width = 50;
 
 
             _gerarRelatorioService = new GerarRelatorioService();
@@ -83,8 +83,8 @@ namespace ControlePecas
         {
             if (_emReload || !_carregouForm) return;
 
-            var obraSelecionada = comboBox1.SelectedItem as Obra;
-            var regiaoSelecionada = comboBox2.SelectedItem as Regiao;
+            var obraSelecionada = ObrasFiltro.SelectedItem as Obra;
+            var regiaoSelecionada = RegiaoEstoqueFiltro.SelectedItem as Regiao;
 
             _selectedCodObra = obraSelecionada.CodObra;
             _selectedRegiaoEstoque = regiaoSelecionada.Id;
@@ -112,8 +112,8 @@ namespace ControlePecas
                     );
                 }
 
-                dataGridView1.DataSource = tabela;
-                dataGridView1.Columns["Cod."].Width = 50;
+                PecaObraView.DataSource = tabela;
+                PecaObraView.Columns["Cod."].Width = 50;
             }
         }
 
@@ -121,8 +121,8 @@ namespace ControlePecas
         {
             if (_emReload || !_carregouForm) return;
 
-            var obraSelecionada = comboBox1.SelectedItem as Obra;
-            var regiaoSelecionada = comboBox2.SelectedItem as Regiao;
+            var obraSelecionada = ObrasFiltro.SelectedItem as Obra;
+            var regiaoSelecionada = RegiaoEstoqueFiltro.SelectedItem as Regiao;
 
             _selectedCodObra = obraSelecionada.CodObra;
             _selectedRegiaoEstoque = regiaoSelecionada.Id;
@@ -150,17 +150,17 @@ namespace ControlePecas
                     );
                 }
 
-                dataGridView1.DataSource = tabela;
-                dataGridView1.Columns["Cod."].Width = 50;
+                PecaObraView.DataSource = tabela;
+                PecaObraView.Columns["Cod."].Width = 50;
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void LinhaSelecionada_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
             _selectedRowIndex = e.RowIndex;
-            var row = dataGridView1.Rows[e.RowIndex];
+            var row = PecaObraView.Rows[e.RowIndex];
        
             var codControle = row.Cells["Cod."].Value;
 
@@ -176,13 +176,13 @@ namespace ControlePecas
             panel1.Top = (ClientSize.Height - panel1.Height) / 2;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BotaoDeletarPeca_Click(object sender, EventArgs e)
         {
             if (_selectedPeca == 0 || _selectedRowIndex == null) return;
            var deletarService = new DeletarPecaService(new DeletarPecaRepository());
 
             deletarService.Executar(_selectedPeca);
-            dataGridView1.Rows.RemoveAt(_selectedRowIndex.Value);
+            PecaObraView.Rows.RemoveAt(_selectedRowIndex.Value);
 
             _selectedPeca = 0;
             _selectedRowIndex = null;
@@ -194,53 +194,22 @@ namespace ControlePecas
             controleCriacao.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var teste = e;
-            var teste2 = teste;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void BotaoModalEditar_Click(object sender, EventArgs e)
         {
             if (_selectedPeca != 0)
             {
-                label3.Visible = false;
+                AvisoErroEditar.Visible = false;
                 var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPecaRepository, _atualizarPecaRepository);
                 controleAtualizacao.ShowDialog();
             } 
             if(_selectedPeca == 0)
             {
                 SystemSounds.Exclamation.Play();
-                label3.Visible = true;
+                AvisoErroEditar.Visible = true;
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void BotaoAtualizarTabela_Click(object sender, EventArgs e)
         {
             _emReload = true;
             var carregarObras = new CarregarObras(new BuscarObrasRepository());
@@ -250,13 +219,13 @@ namespace ControlePecas
             _regioesEstoques = carregarRegioesEstoques.Executar();
             _obras = carregarObras.Executar();
 
-            comboBox1.DataSource = _obras;
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.ValueMember = "CodObra";
+            ObrasFiltro.DataSource = _obras;
+            ObrasFiltro.DisplayMember = "Nome";
+            ObrasFiltro.ValueMember = "CodObra";
 
-            comboBox2.DataSource = _regioesEstoques;
-            comboBox2.DisplayMember = "Nome";
-            comboBox2.ValueMember = "Id";
+            RegiaoEstoqueFiltro.DataSource = _regioesEstoques;
+            RegiaoEstoqueFiltro.DisplayMember = "Nome";
+            RegiaoEstoqueFiltro.ValueMember = "Id";
 
             var carregarPecas = new CarregarPecas(new BuscarPecasRepository());
 
@@ -280,15 +249,15 @@ namespace ControlePecas
                 );
             }
 
-            dataGridView1.DataSource = tabela;
-            dataGridView1.Columns["Cod."].Width = 50;
+            PecaObraView.DataSource = tabela;
+            PecaObraView.Columns["Cod."].Width = 50;
 
             _emReload = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BotaoGerarRelatorio_Click(object sender, EventArgs e)
         {
-            DataTable relatorio = (DataTable)dataGridView1.DataSource;
+            DataTable relatorio = (DataTable)PecaObraView.DataSource;
             _gerarRelatorioService.Executar(relatorio);
         }
     }
