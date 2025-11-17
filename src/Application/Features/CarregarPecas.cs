@@ -6,9 +6,9 @@ namespace ControlePecas.Services
 {
     public class CarregarPecas
     {
-        private readonly BuscarPecasRepository _buscarPecasRepository;
+        private readonly BuscarPecasRepo _buscarPecasRepository;
 
-        public CarregarPecas(BuscarPecasRepository buscarPecasRepository)
+        public CarregarPecas(BuscarPecasRepo buscarPecasRepository)
         {
             _buscarPecasRepository = buscarPecasRepository;
         }

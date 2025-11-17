@@ -6,9 +6,9 @@ namespace ControlePecas.Services
 {
     public class CarregarRegioesEstoques
     {
-        private readonly BuscarRegioesEstoquesRepository _buscarRegioesEstoquesRepository;
+        private readonly BuscarRegioesEstoquesRepo _buscarRegioesEstoquesRepository;
 
-        public CarregarRegioesEstoques(BuscarRegioesEstoquesRepository buscarRegioesEstoquesRepository)
+        public CarregarRegioesEstoques(BuscarRegioesEstoquesRepo buscarRegioesEstoquesRepository)
         {
             _buscarRegioesEstoquesRepository = buscarRegioesEstoquesRepository;
         }

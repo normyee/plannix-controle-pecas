@@ -2,11 +2,11 @@
 
 namespace ControlePecas.Services
 {
-    public class DeletarPecaService
+    public class DeletarPeca
     {
-        private readonly DeletarPecaRepository _deletarPecaRepository;
+        private readonly DeletarPecaRepo _deletarPecaRepository;
 
-        public DeletarPecaService(DeletarPecaRepository deletarPecaRepository)
+        public DeletarPeca(DeletarPecaRepo deletarPecaRepository)
         {
             _deletarPecaRepository = deletarPecaRepository;
         }

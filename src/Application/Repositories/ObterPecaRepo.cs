@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data.SqlClient;
+using ControlePecas.Domain;
+using System.Configuration;
 
 namespace ControlePecas.Repository
 {
-    public class ObterPecaRepository
+    public class ObterPecaRepo
     {
-        private readonly string _connectionString =
-            "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public PecaObra Executar(int idPeca)
         {

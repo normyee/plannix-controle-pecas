@@ -13,8 +13,8 @@ namespace ControlePecas
         private readonly int _codControle;
         private readonly List<Regiao> _regioesEstoques;
         private readonly List<Obra> _obras;
-        private readonly ObterPecaRepository _obterPecaRepository;
-        private readonly AtualizarPecaRepository _atualizarPecaRepository;
+        private readonly ObterPecaRepo _obterPecaRepository;
+        private readonly AtualizarPecaRepo _atualizarPecaRepository;
 
         private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
     new List<KeyValuePair<string, string>>
@@ -38,7 +38,7 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPecaRepository obterPecaRepository, AtualizarPecaRepository atualizarPecaRepository)
+        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPecaRepo obterPecaRepository, AtualizarPecaRepo atualizarPecaRepository)
         {
             InitializeComponent();
 

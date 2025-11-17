@@ -12,7 +12,7 @@ namespace ControlePecas
     {
         private readonly List<Regiao> _regioesEstoques;
         private readonly List<Obra> _obras;
-        private readonly CriarPecaRepository _criarPecaRepository;
+        private readonly CriarPecaRepo _criarPecaRepository;
 
         private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
             new List<KeyValuePair<string, string>>
@@ -36,7 +36,7 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleCriacao(List<Regiao> regioesEstoques, List<Obra> obras, CriarPecaRepository criarPecaRepository)
+        public ControleCriacao(List<Regiao> regioesEstoques, List<Obra> obras, CriarPecaRepo criarPecaRepository)
         {
             InitializeComponent();
 

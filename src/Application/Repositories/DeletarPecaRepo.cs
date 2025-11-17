@@ -1,12 +1,11 @@
-﻿using System.Data.SqlClient;
+﻿using System.Configuration;
+using System.Data.SqlClient;
 
 namespace ControlePecas.Repository
 {
-    public class DeletarPecaRepository
+    public class DeletarPecaRepo
     {
-        private readonly string _connectionString =
-            "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
-
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public void Executar(int codControle)
         {
             using (var connection = new SqlConnection(_connectionString))

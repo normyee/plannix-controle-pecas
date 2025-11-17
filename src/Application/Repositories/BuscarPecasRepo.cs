@@ -1,13 +1,13 @@
 ﻿using ControlePecas.Domain;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace ControlePecas.Repository
 {
-    public class BuscarPecasRepository
+    public class BuscarPecasRepo
     {
-        private readonly string _connectionString = "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
-
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public List<PecaItem> Executar(int codObra, int idRegiao)
         {
             var pecaItens = new List<PecaItem>();

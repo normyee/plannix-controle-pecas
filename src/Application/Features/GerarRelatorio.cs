@@ -11,7 +11,7 @@ using System.IO;
 
 namespace ControlePecas.Services
 {
-    public class GerarRelatorioService
+    public class GerarRelatorio
     {
         public void Executar(DataTable relatorio)
         {

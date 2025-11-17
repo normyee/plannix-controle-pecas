@@ -1,36 +1,15 @@
-﻿using System;
+﻿using ControlePecas.Domain;
+using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace ControlePecas.Repository
 {
-    public class PecaObra
-    {
-        public int? CodControle { get; set; }
-        public string NomePeca { get; set; }
-        public DateTime DataPeca { get; set; }   
-        public string PecaStatus { get; set; }
-        public decimal PesoKg { get; set; }       
-        public decimal VolumeM3 { get; set; }         
-        public int RegiaoEstoque { get; set; }         
- 
-        public string AcabamentoStatus { get; set; }     
-        public DateTime AcabamentoDataInicio { get; set; }  
-        public DateTime AcabamentoDataFim { get; set; }   
-        public int SetorAcabamento { get; set; }
-
-        public int EstoqueTotal { get; set; }            
-        public DateTime DataEstoque { get; set; }       
-        public string EstoqueStatus { get; set; }      
-
-        public int CodObra { get; set; }             
-    }
-
-    public class CriarPecaRepository
+   public class CriarPecaRepo
     {
 
-        private readonly string _connectionString = "server=localhost,1433;database=master;user id=sa;password=ControlePecas@2025;TrustServerCertificate=true;";
-    
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public object Executar(PecaObra peca)
         {
             using (var connection = new SqlConnection(_connectionString))
