@@ -139,7 +139,5 @@ Todas as funcionalidades solicitadas foram implementadas e estão funcionando:
 ### Preview
 
 <div align="center">
-  <img src="doc/demo.gif" alt="preview do sistema" width="1040">
+  <img src="doc/example.gif" alt="preview do sistema" width="1040">
 </div>
-
-
