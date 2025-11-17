@@ -9,7 +9,7 @@ using System;
 using System.Data;
 using System.IO;
 
-namespace ControlePecas.Services
+namespace ControlePecas.Features
 {
     public class GerarRelatorio
     {

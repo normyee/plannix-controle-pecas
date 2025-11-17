@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ControlePecas.Domain;
+using ControlePecas.Entities;
 using System.Configuration;
 
-namespace ControlePecas.Repository
+namespace ControlePecas.Repositories
 {
     public class ObterPecaRepo
     {

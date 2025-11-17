@@ -1,6 +1,5 @@
-﻿using ControlePecas.Repository;
-using ControlePecas.Repository.BuscarObrasRepository;
-using ControlePecas.Services;
+﻿using ControlePecas.Repositories;
+using ControlePecas.Features;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +19,18 @@ namespace ControlePecas
             GerarRelatorio gerarRelatorio = new GerarRelatorio();
             CarregarObras carregarObras = new CarregarObras(new BuscarObrasRepo());
             CarregarRegioesEstoques carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepo());
+            CarregarPecas carregarPecas = new CarregarPecas(new BuscarPecasRepo());
+            ObterPeca obterPeca = new ObterPeca(new ObterPecaRepo());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main(gerarRelatorio, carregarObras, carregarRegioesEstoques));
+            Application.Run(new Main(
+                gerarRelatorio, 
+                carregarObras, 
+                carregarRegioesEstoques,
+                carregarPecas,
+                obterPeca
+                ));
         }
     }
 }

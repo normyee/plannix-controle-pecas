@@ -1,10 +1,10 @@
-﻿using ControlePecas.Domain;
+﻿using ControlePecas.Entities;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace ControlePecas.Repository
+namespace ControlePecas.Repositories
 {
    public class CriarPecaRepo
     {

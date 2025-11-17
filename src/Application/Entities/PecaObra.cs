@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ControlePecas.Domain
+namespace ControlePecas.Entities
 {
     public class PecaObra
     {

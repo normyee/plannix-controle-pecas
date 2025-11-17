@@ -1,21 +1,21 @@
-﻿using ControlePecas.Domain;
-using ControlePecas.Repository;
+﻿using ControlePecas.Entities;
+using ControlePecas.Repositories;
 using System.Collections.Generic;
 
-namespace ControlePecas.Services
+namespace ControlePecas.Features
 {
     public class CarregarPecas
     {
-        private readonly BuscarPecasRepo _buscarPecasRepository;
+        private readonly BuscarPecasRepo _buscarPecasRepo;
 
-        public CarregarPecas(BuscarPecasRepo buscarPecasRepository)
+        public CarregarPecas(BuscarPecasRepo buscarPecasRepo)
         {
-            _buscarPecasRepository = buscarPecasRepository;
+            _buscarPecasRepo = buscarPecasRepo;
         }
 
         public List<PecaItem> Executar(int codObra, int idRegiao)
         {
-            return _buscarPecasRepository.Executar(codObra, idRegiao);
+            return _buscarPecasRepo.Executar(codObra, idRegiao);
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using ControlePecas.Domain;
+﻿using ControlePecas.Entities;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace ControlePecas.Repository
+namespace ControlePecas.Repositories
 {
     public class BuscarRegioesEstoquesRepo
     {

@@ -1,5 +1,5 @@
-﻿using ControlePecas.Domain;
-using ControlePecas.Repository;
+﻿using ControlePecas.Entities;
+using ControlePecas.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

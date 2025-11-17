@@ -1,7 +1,6 @@
-﻿using ControlePecas.Domain;
-using ControlePecas.Repository;
-using ControlePecas.Repository.BuscarObrasRepository;
-using ControlePecas.Services;
+﻿using ControlePecas.Entities;
+using ControlePecas.Repositories;
+using ControlePecas.Features;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,24 +24,32 @@ namespace ControlePecas
         private int _selectedRegiaoEstoque = 0;
 
         private CriarPecaRepo _criarPecaRepository;
-        private ObterPecaRepo _obterPecaRepository;
         private AtualizarPecaRepo _atualizarPecaRepository;
 
         private GerarRelatorio _gerarRelatorio;
         private CarregarObras _carregarObras;
         private CarregarRegioesEstoques _carregarRegioesEstoques;
-        public Main(GerarRelatorio gerarRelatorio, CarregarObras carregarObras, CarregarRegioesEstoques carregarRegioesEstoques)
+        private CarregarPecas _carregarPecas;
+        private ObterPeca _obterPeca;
+        public Main(
+            GerarRelatorio gerarRelatorio, 
+            CarregarObras carregarObras, 
+            CarregarRegioesEstoques carregarRegioesEstoques,
+            CarregarPecas carregarPecas,
+            ObterPeca obterPeca
+            )
         {
             InitializeComponent();
 
             _gerarRelatorio = gerarRelatorio;
             _carregarObras = carregarObras;
             _carregarRegioesEstoques = carregarRegioesEstoques;
+            _carregarPecas = carregarPecas;
+            _obterPeca = obterPeca;
         }
 
         private void Main_load(object sender, EventArgs e)
         {
-            _obterPecaRepository = new ObterPecaRepo();
             _criarPecaRepository = new CriarPecaRepo();
             _atualizarPecaRepository = new AtualizarPecaRepo();
 
@@ -60,9 +67,7 @@ namespace ControlePecas
             _selectedCodObra = _obras[0].CodObra;
             _selectedRegiaoEstoque = _regioesEstoques[0].Id;
 
-            var carregarPecas = new CarregarPecas(new BuscarPecasRepo());
-
-            var pecas = carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
+            var pecas = _carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
 
             var pecasViewModel = pecas.Select(p => new PecaViewModel
             {
@@ -95,8 +100,7 @@ namespace ControlePecas
 
             if (obraSelecionada != null && regiaoSelecionada != null)
             {
-                var carregarPecas = new CarregarPecas(new BuscarPecasRepo());
-                var pecas = carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
+                var pecas = _carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
 
                 var pecasViewModel = pecas.Select(p => new PecaViewModel
                 {
@@ -129,8 +133,7 @@ namespace ControlePecas
 
             if (obraSelecionada != null && regiaoSelecionada != null)
             {
-                var carregarPecas = new CarregarPecas(new BuscarPecasRepo());
-                var pecas = carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
+                var pecas = _carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
 
                 var pecasViewModel = pecas.Select(p => new PecaViewModel
                 {
@@ -207,7 +210,7 @@ namespace ControlePecas
             if (_selectedPeca != 0)
             {
                 AvisoErroEditar.Visible = false;
-                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPecaRepository, _atualizarPecaRepository);
+                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPeca, _atualizarPecaRepository);
                 controleAtualizacao.ShowDialog();
             } 
             if(_selectedPeca == 0)
@@ -233,9 +236,7 @@ namespace ControlePecas
             RegiaoEstoqueFiltro.DisplayMember = "Nome";
             RegiaoEstoqueFiltro.ValueMember = "Id";
 
-            var carregarPecas = new CarregarPecas(new BuscarPecasRepo());
-
-            var pecas = carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
+            var pecas = _carregarPecas.Executar(_selectedCodObra, _selectedRegiaoEstoque);
 
             var pecasViewModel = pecas.Select(p => new PecaViewModel
             {

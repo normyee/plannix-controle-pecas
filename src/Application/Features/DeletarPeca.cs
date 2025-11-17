@@ -1,19 +1,19 @@
-﻿using ControlePecas.Repository;
+﻿using ControlePecas.Repositories;
 
-namespace ControlePecas.Services
+namespace ControlePecas.Features
 {
     public class DeletarPeca
     {
-        private readonly DeletarPecaRepo _deletarPecaRepository;
+        private readonly DeletarPecaRepo _deletarPecaRepo;
 
-        public DeletarPeca(DeletarPecaRepo deletarPecaRepository)
+        public DeletarPeca(DeletarPecaRepo deletarPecaRepo)
         {
-            _deletarPecaRepository = deletarPecaRepository;
+            _deletarPecaRepo= deletarPecaRepo;
         }
 
         public void Executar(int codControle)
         {
-           _deletarPecaRepository.Executar(codControle);
+           _deletarPecaRepo.Executar(codControle);
         }
     }
 }

@@ -1,5 +1,6 @@
-﻿using ControlePecas.Domain;
-using ControlePecas.Repository;
+﻿using ControlePecas.Entities;
+using ControlePecas.Repositories;
+using ControlePecas.Features;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,7 +14,7 @@ namespace ControlePecas
         private readonly int _codControle;
         private readonly List<Regiao> _regioesEstoques;
         private readonly List<Obra> _obras;
-        private readonly ObterPecaRepo _obterPecaRepository;
+        private readonly ObterPeca _obterPeca;
         private readonly AtualizarPecaRepo _atualizarPecaRepository;
 
         private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
@@ -38,14 +39,14 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPecaRepo obterPecaRepository, AtualizarPecaRepo atualizarPecaRepository)
+        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPeca obterPeca, AtualizarPecaRepo atualizarPecaRepository)
         {
             InitializeComponent();
 
             _codControle = codControle;
             _regioesEstoques = regioesEstoques;
             _obras = obras;
-            _obterPecaRepository = obterPecaRepository;
+            _obterPeca = obterPeca;
             _atualizarPecaRepository = atualizarPecaRepository;
 
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -78,7 +79,7 @@ new List<KeyValuePair<string, string>>
 
             _obras = obras;
 
-          PecaObra pecaObra =  _obterPecaRepository.Executar(_codControle);
+          PecaObra pecaObra = _obterPeca.Executar(_codControle);
 
             PecaNome.Text = pecaObra.NomePeca;
             PecaNome.ForeColor = Color.Black;
