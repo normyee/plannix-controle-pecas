@@ -21,6 +21,8 @@ namespace ControlePecas
             CarregarRegioesEstoques carregarRegioesEstoques = new CarregarRegioesEstoques(new BuscarRegioesEstoquesRepo());
             CarregarPecas carregarPecas = new CarregarPecas(new BuscarPecasRepo());
             ObterPeca obterPeca = new ObterPeca(new ObterPecaRepo());
+            CriarPeca criarPeca = new CriarPeca(new CriarPecaRepo());
+            AtualizarPeca atualizarPeca = new AtualizarPeca(new AtualizarPecaRepo());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -29,7 +31,9 @@ namespace ControlePecas
                 carregarObras, 
                 carregarRegioesEstoques,
                 carregarPecas,
-                obterPeca
+                obterPeca,
+                criarPeca,
+                atualizarPeca
                 ));
         }
     }

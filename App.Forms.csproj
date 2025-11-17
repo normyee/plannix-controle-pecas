@@ -145,6 +145,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Application\Features\AtualizarPeca.cs" />
     <Compile Include="src\Application\Features\CriarPeca.cs" />
     <Compile Include="src\Application\Features\ObterPeca.cs" />
     <Compile Include="src\UI\Forms\ControleAtualizacao.cs">

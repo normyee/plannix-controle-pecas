@@ -15,7 +15,7 @@ namespace ControlePecas
         private readonly List<Regiao> _regioesEstoques;
         private readonly List<Obra> _obras;
         private readonly ObterPeca _obterPeca;
-        private readonly AtualizarPecaRepo _atualizarPecaRepository;
+        private readonly AtualizarPeca _atualizarPeca;
 
         private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
     new List<KeyValuePair<string, string>>
@@ -39,7 +39,7 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPeca obterPeca, AtualizarPecaRepo atualizarPecaRepository)
+        public ControleAtualizacao(int codControle, List<Regiao> regioesEstoques, List<Obra> obras, ObterPeca obterPeca, AtualizarPeca atualizarPeca)
         {
             InitializeComponent();
 
@@ -47,7 +47,7 @@ new List<KeyValuePair<string, string>>
             _regioesEstoques = regioesEstoques;
             _obras = obras;
             _obterPeca = obterPeca;
-            _atualizarPecaRepository = atualizarPecaRepository;
+            _atualizarPeca = atualizarPeca;
 
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -150,7 +150,7 @@ new List<KeyValuePair<string, string>>
                 EstoqueStatus = StatusPeca.SelectedValue.ToString(),
                 CodObra = codObra
             };
-            _atualizarPecaRepository.Executar(_codControle, pecaObra);
+            _atualizarPeca.Executar(_codControle, pecaObra);
             Close();
         }
 

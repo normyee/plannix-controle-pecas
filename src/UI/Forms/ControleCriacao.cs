@@ -1,4 +1,5 @@
 ﻿using ControlePecas.Entities;
+using ControlePecas.Features;
 using ControlePecas.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ControlePecas
     {
         private readonly List<Regiao> _regioesEstoques;
         private readonly List<Obra> _obras;
-        private readonly CriarPecaRepo _criarPecaRepository;
+        private readonly CriarPeca _criarPeca;
 
         private readonly List<KeyValuePair<string, string>> _acabamentoStatus =
             new List<KeyValuePair<string, string>>
@@ -36,11 +37,11 @@ new List<KeyValuePair<string, string>>
         new KeyValuePair<string, string>("INATIVA", "Inativa"),
 };
 
-        public ControleCriacao(List<Regiao> regioesEstoques, List<Obra> obras, CriarPecaRepo criarPecaRepository)
+        public ControleCriacao(List<Regiao> regioesEstoques, List<Obra> obras, CriarPeca criarPeca)
         {
             InitializeComponent();
 
-            _criarPecaRepository = criarPecaRepository;
+            _criarPeca = criarPeca;
             _regioesEstoques = regioesEstoques;
             _obras = obras;
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -131,7 +132,7 @@ new List<KeyValuePair<string, string>>
                 CodObra = codObra
             };
 
-            _criarPecaRepository.Executar(pecaObra);
+            _criarPeca.Executar(pecaObra);
             Close();
         }
 

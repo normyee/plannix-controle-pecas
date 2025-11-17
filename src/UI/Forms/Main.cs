@@ -23,7 +23,6 @@ namespace ControlePecas
         private int _selectedCodObra = 0;
         private int _selectedRegiaoEstoque = 0;
 
-        private CriarPecaRepo _criarPecaRepository;
         private AtualizarPecaRepo _atualizarPecaRepository;
 
         private GerarRelatorio _gerarRelatorio;
@@ -31,12 +30,16 @@ namespace ControlePecas
         private CarregarRegioesEstoques _carregarRegioesEstoques;
         private CarregarPecas _carregarPecas;
         private ObterPeca _obterPeca;
+        private CriarPeca _criarPeca;
+        private AtualizarPeca _atualizarPeca;
         public Main(
             GerarRelatorio gerarRelatorio, 
             CarregarObras carregarObras, 
             CarregarRegioesEstoques carregarRegioesEstoques,
             CarregarPecas carregarPecas,
-            ObterPeca obterPeca
+            ObterPeca obterPeca,
+            CriarPeca criarPeca,
+            AtualizarPeca atualizarPeca
             )
         {
             InitializeComponent();
@@ -46,13 +49,12 @@ namespace ControlePecas
             _carregarRegioesEstoques = carregarRegioesEstoques;
             _carregarPecas = carregarPecas;
             _obterPeca = obterPeca;
+            _criarPeca = criarPeca;
+            _atualizarPeca = atualizarPeca;
         }
 
         private void Main_load(object sender, EventArgs e)
         {
-            _criarPecaRepository = new CriarPecaRepo();
-            _atualizarPecaRepository = new AtualizarPecaRepo();
-
             _regioesEstoques = _carregarRegioesEstoques.Executar();
             _obras = _carregarObras.Executar();
 
@@ -201,7 +203,7 @@ namespace ControlePecas
 
         private void InserirItem_Click(object sender, EventArgs e)
         {
-            var controleCriacao = new ControleCriacao(_regioesEstoques, _obras, _criarPecaRepository);
+            var controleCriacao = new ControleCriacao(_regioesEstoques, _obras, _criarPeca);
             controleCriacao.ShowDialog();
         }
 
@@ -210,7 +212,7 @@ namespace ControlePecas
             if (_selectedPeca != 0)
             {
                 AvisoErroEditar.Visible = false;
-                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPeca, _atualizarPecaRepository);
+                var controleAtualizacao = new ControleAtualizacao(_selectedPeca, _regioesEstoques, _obras, _obterPeca, _atualizarPeca);
                 controleAtualizacao.ShowDialog();
             } 
             if(_selectedPeca == 0)
@@ -223,7 +225,6 @@ namespace ControlePecas
         private void BotaoAtualizarTabela_Click(object sender, EventArgs e)
         {
             _emReload = true;
-            _criarPecaRepository = new CriarPecaRepo();
 
             _regioesEstoques = _carregarRegioesEstoques.Executar();
             _obras = _carregarObras.Executar();
